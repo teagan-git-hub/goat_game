@@ -1,0 +1,38 @@
+GDRE Tools v2.6.4
+Ubuntu 20.04.6 LTS (Focal Fossa), headless
+Opening file: /tmp/decompiler/3a63b1488d904513b7f798f72fbbc4a2/game-sprint1.exe
+Loaded 33 imported files
+WARNING: No assembly file 'Group Project.dll' found in any directory in /tmp/decompiler/3a63b1488d904513b7f798f72fbbc4a2 and no C# files found, assuming it's not a C# project
+   at: load_project_dotnet_assembly (modules/gdsdecomp/utility/gdre_settings.cpp:2929)
+Detected Engine Version: 4.7.0
+Detected Bytecode Revision: 4.5.0-stable (ebc36a7)
+Successfully loaded PCK!
+Version: 4.7.0
+Verified 70 files, no errors detected!
+Extracted 70 files, no errors detected!
+Saved project config.
+
+
+********************************EXPORT REPORT********************************
+
+Totals:                                 
+Decompiled scripts:                     5
+Scripts not decompiled:                 0
+Imported resources for export session:  33
+Successfully converted:                 33
+Lossy:                                  3
+Rewrote metadata:                       22
+Non-importable conversions:             0
+Not converted:                          0
+Failed conversions:                     0
+-------------
+
+
+
+------------------------------------------------------------------------------------
+
+Use Godot editor version 4.7.0 to edit the project.
+
+*******************************************************************************
+
+Recovery finished in 00m00s

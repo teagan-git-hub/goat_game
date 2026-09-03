@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bvtgj4rcx6b40"]
+
+[ext_resource type="Script" uid="uid://cjtbxl0ee7f10" path="res://Scripts/versionnotes.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://bffu5xrhi4758" path="res://Pixeloid_Font_1_0/TrueType (.ttf)/PixeloidSans.ttf" id="2"]
+[ext_resource type="Texture2D" uid="uid://ch0af3026a0us" path="res://bgs/orig_big 18.png" id="3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t5rx0"]
+font = ExtResource("2")
+font_size = 32
+
+[node name="Control" type="Control" unique_id=1088420645]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=844743487]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=320889194]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=201057701]
+layout_mode = 2
+text = "
+
+
+
+Version Notes:
+1.0 - Added Main Menu + Version Notes and Credits, Added music
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
+label_settings = SubResource("LabelSettings_t5rx0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1615240033]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 9.0
+offset_right = 122.0
+offset_bottom = 50.0
+text = "Back to Menu"
+
+[node name="OrigBig18" type="Sprite2D" parent="." unique_id=1880544130]
+z_index = -1
+position = Vector2(741, 202)
+texture = ExtResource("3")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

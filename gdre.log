@@ -1,0 +1,33 @@
+Godot Engine v4.8.dev.gh.8a459f517 (2026-06-22 22:51:24 UTC) - https://godotengine.org
+Recovery started
+input_file: ["/tmp/decompiler/3a63b1488d904513b7f798f72fbbc4a2/game-sprint1.exe"]
+Input files: ["/tmp/decompiler/3a63b1488d904513b7f798f72fbbc4a2/game-sprint1.exe"]
+GDRE Tools v2.6.4
+Ubuntu 20.04.6 LTS (Focal Fossa), headless
+Opening file: /tmp/decompiler/3a63b1488d904513b7f798f72fbbc4a2/game-sprint1.exe
+Loaded 33 imported files
+Detected Engine Version: 4.7.0
+Detected Bytecode Revision: 4.5.0-stable (ebc36a7)
+Successfully loaded PCK!
+Version: 4.7.0
+Verified 70 files, no errors detected!
+Extracted 70 files, no errors detected!
+Saved project config.
+********************************EXPORT REPORT********************************
+Totals:
+Decompiled scripts:                     5
+Scripts not decompiled:                 0
+Imported resources for export session:  33
+Successfully converted:                 33
+Lossy:                                  3
+Rewrote metadata:                       22
+Non-importable conversions:             0
+Not converted:                          0
+Failed conversions:                     0
+-------------
+------------------------------------------------------------------------------------
+Use Godot editor version 4.7.0 to edit the project.
+*******************************************************************************
+Recovery finished in 00m00s
+Log file written to: /tmp/decompiler/323ef2249eeb303aaab2e49893100519/game-sprint1.exe/project/gdre_export.log
+Please include this file when reporting issues!
