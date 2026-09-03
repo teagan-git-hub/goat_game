@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://qsoed46w3pb4" path="res://Scripts/credits.gd" id="1"]
 [ext_resource type="FontFile" uid="uid://bffu5xrhi4758" path="res://Pixeloid_Font_1_0/TrueType (.ttf)/PixeloidSans.ttf" id="2"]
-[ext_resource type="Texture2D" uid="uid://dbmi7lyqo0pe3" path="res://bgs/orig_big 7.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dbmi7lyqo0pe3" path="res://assets/bgs/orig_big 7.png" id="3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t5rx0"]
 font = ExtResource("2")

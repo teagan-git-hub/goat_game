@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b0qkoofqujmce"]
 
 [ext_resource type="Script" uid="uid://t286kfqjctc5" path="res://Scripts/splash_screen.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://c6vqwvviml62u" path="res://images.jpg" id="2"]
+[ext_resource type="Texture2D" uid="uid://c6vqwvviml62u" path="res://assets/images/images.jpg" id="2"]
 [ext_resource type="AudioStream" uid="uid://s2lrwjqhoq7e" path="res://28 High Quality 16-bit RPG Music/14. Traveling the Sky.mp3" id="3"]
-[ext_resource type="Texture2D" uid="uid://vday1o4tho3d" path="res://longshot20260901204411.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://vday1o4tho3d" path="res://assets/images/longshot20260901204411.png" id="4"]
 
 [sub_resource type="Animation" id="Animation_wwf30"]
 length = 3.7666667
