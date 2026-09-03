@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://fcpa01ljhc3f" path="res://Pixeloid_Font_1_0/OpenType (.otf)/PixeloidSans.otf" id="3"]
 [ext_resource type="Texture2D" uid="uid://bkvmidvjtxhkf" path="res://assets/bgs/orig_big 16.png" id="4"]
 [ext_resource type="PackedScene" uid="uid://clu7s5ger5nrn" path="res://Scenes/fade.tscn" id="5"]
-[ext_resource type="AudioStream" uid="uid://s2lrwjqhoq7e" path="res://28 High Quality 16-bit RPG Music/14. Traveling the Sky.mp3" id="6"]
+[ext_resource type="AudioStream" uid="uid://s2lrwjqhoq7e" path="res://assets/music/28 High Quality 16-bit RPG Music/14. Traveling the Sky.mp3" id="6"]
 [ext_resource type="AudioStream" uid="uid://toa0vqb76y5j" path="res://tap.wav" id="7"]
 
 [node name="Main Menu" type="Node2D" unique_id=1134232118]

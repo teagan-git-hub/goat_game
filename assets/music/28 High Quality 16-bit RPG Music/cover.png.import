@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bc2yjqw2atmoj"
-path="res://.godot/imported/cover.png-658bbc0f6065d226b5b1ec87b6a9f981.ctex"
+path="res://.godot/imported/cover.png-f62291ba44c9c0fd619c5cf910165086.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://28 High Quality 16-bit RPG Music/cover.png"
-dest_files=["res://.godot/imported/cover.png-658bbc0f6065d226b5b1ec87b6a9f981.ctex"]
+source_file="res://assets/music/28 High Quality 16-bit RPG Music/cover.png"
+dest_files=["res://.godot/imported/cover.png-f62291ba44c9c0fd619c5cf910165086.ctex"]
 
 [params]
 
