@@ -1,7 +1,7 @@
 extends Node2D
-@export var attack: Button
-@export var items: Button
-@export var retreat: Button
+@onready var attack: Button = $Control/attack
+@onready var items: Button = $Control/items
+@onready var retreat: Button = $Control/retreat
 @onready var button_click: AudioStreamPlayer2D = $"button click"
 
 func _on_attack_pressed() -> void:
