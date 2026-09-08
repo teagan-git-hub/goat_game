@@ -31,3 +31,7 @@ offset_left = 798.0
 offset_top = 478.0
 offset_right = 1045.0
 offset_bottom = 577.0
+
+[connection signal="pressed" from="Control/attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="Control/items" to="." method="_on_items_pressed"]
+[connection signal="pressed" from="Control/retreat" to="." method="_on_retreat_pressed"]
