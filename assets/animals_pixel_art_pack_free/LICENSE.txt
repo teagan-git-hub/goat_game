@@ -1,0 +1,14 @@
+LICENSE
+
+All artwork in this pack is protected by copyright.
+
+You MAY:
+- Use the assets in commercial or personal games
+- Modify the assets for use inside your own projects
+
+You MAY NOT:
+- Resell or redistribute the assets as standalone files
+- Include the assets in asset packs, bundles, or templates
+- Claim authorship of the artwork
+
+All rights reserved.
