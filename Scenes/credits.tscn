@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://qsoed46w3pb4" path="res://Scripts/credits.gd" id="1"]
 [ext_resource type="FontFile" uid="uid://bffu5xrhi4758" path="res://Pixeloid_Font_1_0/TrueType (.ttf)/PixeloidSans.ttf" id="2"]
 [ext_resource type="Texture2D" uid="uid://dbmi7lyqo0pe3" path="res://assets/bgs/orig_big 7.png" id="3"]
+[ext_resource type="AudioStream" uid="uid://s2lrwjqhoq7e" path="res://assets/music/28 High Quality 16-bit RPG Music/14. Traveling the Sky.mp3" id="4_1bamb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t5rx0"]
 font = ExtResource("2")
@@ -74,5 +75,8 @@ z_index = -3
 position = Vector2(36, 565)
 scale = Vector2(1.2264662, 1.2264662)
 texture = ExtResource("3")
+
+[node name="Menu Music" type="AudioStreamPlayer2D" parent="." unique_id=638947414]
+stream = ExtResource("4_1bamb")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
