@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b7k4rlnkiqq3m"]
 
 [ext_resource type="PackedScene" uid="uid://dsb1y34cerphy" path="res://Scenes/player.tscn" id="1_ekiqp"]
+[ext_resource type="PackedScene" uid="uid://25tswl22p7ug" path="res://Scenes/cow.tscn" id="2_xslkm"]
 
 [node name="Game" type="Node2D" unique_id=709867521]
 y_sort_enabled = true
@@ -48,5 +49,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 100
 text = "Slimed Out!"
+
+[node name="Cow" parent="." unique_id=125860087 instance=ExtResource("2_xslkm")]
+position = Vector2(409, 184)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
