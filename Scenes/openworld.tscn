@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://b7k4rlnkiqq3m"]
+
+[node name="Game" type="Node2D" unique_id=709867521]
+y_sort_enabled = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1089738906]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=628072813]
+layer = -2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=821943668]
+offset_right = 3855.0
+offset_bottom = 2189.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="." unique_id=489118454]
+wait_time = 0.25
+autostart = true
+
+[node name="GameOver" type="CanvasLayer" parent="." unique_id=1268377885]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver" unique_id=233372197]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.97, 0.4261534, 0.40740004, 0.70980394)
+
+[node name="Label" type="Label" parent="GameOver/ColorRect" unique_id=2140144462]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -292.0
+offset_top = -78.0
+offset_right = 269.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "Slimed Out!"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -13,7 +13,7 @@ func _ready() -> void :
 
 func _on_start_pressed() -> void :
 	button_click.play()
-	get_tree().change_scene_to_file("")
+	get_tree().change_scene_to_file("res://Scenes/openworld.tscn")
 
 func _on_version_notes_pressed() -> void :
 	button_click.play()
