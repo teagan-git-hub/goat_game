@@ -4,6 +4,10 @@ extends Node2D
 @export var retreat: Button
 @export var button_click: AudioStreamPlayer2D
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 func _on_attack_pressed() -> void:
 	button_click.play()
 

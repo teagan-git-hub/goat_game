@@ -1,6 +1,12 @@
+<<<<<<< Updated upstream
 [gd_scene format=3 uid="uid://ccood52o8v3lw"]
 
 [ext_resource type="Script" uid="uid://b2daxo1b2th0p" path="res://Scenes/battle_screen.gd" id="1_iuxaa"]
+=======
+[gd_scene format=3 uid="uid://da1ljr1rcc4hf"]
+
+[ext_resource type="Script" path="res://Scenes/battle_screen.gd" id="1_iuxaa"]
+>>>>>>> Stashed changes
 
 [node name="Battle Screen" type="Node2D" unique_id=1879869136 node_paths=PackedStringArray("attack", "items", "retreat")]
 script = ExtResource("1_iuxaa")
