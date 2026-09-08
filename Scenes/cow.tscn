@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://kiemjl4t051r"]
+
+[ext_resource type="Texture2D" uid="uid://bjaajxd5u22rk" path="res://animals_pixel_art_pack_free/sprites/Cow.png" id="1_ss0fy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asfwn"]
+atlas = ExtResource("1_ss0fy")
+region = Rect2(0, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4wuh"]
+atlas = ExtResource("1_ss0fy")
+region = Rect2(48, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxqef"]
+atlas = ExtResource("1_ss0fy")
+region = Rect2(96, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpkvw"]
+atlas = ExtResource("1_ss0fy")
+region = Rect2(144, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oad1y"]
+atlas = ExtResource("1_ss0fy")
+region = Rect2(192, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkidu"]
+atlas = ExtResource("1_ss0fy")
+region = Rect2(240, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjkae"]
+atlas = ExtResource("1_ss0fy")
+region = Rect2(288, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kflls"]
+atlas = ExtResource("1_ss0fy")
+region = Rect2(336, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_er45c"]
+atlas = ExtResource("1_ss0fy")
+region = Rect2(384, 96, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_83j5o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asfwn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4wuh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxqef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpkvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oad1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkidu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjkae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kflls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_er45c")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83j5o"]
+size = Vector2(40, 20)
+
+[node name="Cow" type="Node2D" unique_id=1924588999]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1403554683]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_83j5o")
+frame_progress = 0.019064374
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=720231982]
+position = Vector2(-3, -11)
+shape = SubResource("RectangleShape2D_83j5o")
