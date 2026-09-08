@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ccood52o8v3lw"]
 
 [ext_resource type="Script" path="res://Scripts/battle_screen.gd" id="1_iuxaa"]
+[ext_resource type="AudioStream" uid="uid://toa0vqb76y5j" path="res://tap.wav" id="2_4vnsc"]
 
 [node name="Battle Screen" type="Node2D" unique_id=1572553924]
 script = ExtResource("1_iuxaa")
@@ -17,6 +18,7 @@ offset_left = 66.0
 offset_top = 488.0
 offset_right = 313.0
 offset_bottom = 587.0
+text = "Attack"
 
 [node name="items" type="Button" parent="Control" unique_id=1956134953]
 layout_mode = 0
@@ -24,6 +26,7 @@ offset_left = 432.0
 offset_top = 483.0
 offset_right = 679.0
 offset_bottom = 582.0
+text = "Items"
 
 [node name="retreat" type="Button" parent="Control" unique_id=963903386]
 layout_mode = 0
@@ -31,6 +34,11 @@ offset_left = 798.0
 offset_top = 478.0
 offset_right = 1045.0
 offset_bottom = 577.0
+text = "Retreat"
+
+[node name="button click" type="AudioStreamPlayer2D" parent="." unique_id=662635089]
+stream = ExtResource("2_4vnsc")
+bus = &"SFX"
 
 [connection signal="pressed" from="Control/attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="Control/items" to="." method="_on_items_pressed"]
