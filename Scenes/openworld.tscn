@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://b7k4rlnkiqq3m"]
 
+[ext_resource type="PackedScene" uid="uid://dsb1y34cerphy" path="res://Scenes/player.tscn" id="1_ekiqp"]
+
 [node name="Game" type="Node2D" unique_id=709867521]
 y_sort_enabled = true
 
@@ -16,6 +18,8 @@ metadata/_edit_use_anchors_ = true
 [node name="Timer" type="Timer" parent="." unique_id=489118454]
 wait_time = 0.25
 autostart = true
+
+[node name="Player" parent="." unique_id=2116262629 instance=ExtResource("1_ekiqp")]
 
 [node name="GameOver" type="CanvasLayer" parent="." unique_id=1268377885]
 unique_name_in_owner = true
