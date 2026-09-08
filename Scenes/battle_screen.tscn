@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ccood52o8v3lw"]
 
-[ext_resource type="Script" path="res://Scripts/battle_screen.gd" id="1_iuxaa"]
+[ext_resource type="Script" uid="uid://b2daxo1b2th0p" path="res://Scripts/battle_screen.gd" id="1_iuxaa"]
+>>>>>>> f8c2822045d8f699eb15aa7b8cb1d3f39fbc0e86
 
 [node name="Battle Screen" type="Node2D" unique_id=1879869136 node_paths=PackedStringArray("attack", "items", "retreat")]
 script = ExtResource("1_iuxaa")
