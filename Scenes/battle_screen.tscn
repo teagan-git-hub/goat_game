@@ -1,0 +1,43 @@
+<<<<<<< Updated upstream
+[gd_scene format=3 uid="uid://ccood52o8v3lw"]
+
+[ext_resource type="Script" uid="uid://b2daxo1b2th0p" path="res://Scenes/battle_screen.gd" id="1_iuxaa"]
+=======
+[gd_scene format=3 uid="uid://da1ljr1rcc4hf"]
+
+[ext_resource type="Script" path="res://Scenes/battle_screen.gd" id="1_iuxaa"]
+>>>>>>> Stashed changes
+
+[node name="Battle Screen" type="Node2D" unique_id=1879869136 node_paths=PackedStringArray("attack", "items", "retreat")]
+script = ExtResource("1_iuxaa")
+attack = NodePath("Control/attack")
+items = NodePath("Control/items")
+retreat = NodePath("Control/retreat")
+
+[node name="Control" type="Control" parent="." unique_id=248504201]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 246.0
+offset_right = 1152.0
+offset_bottom = 645.0
+
+[node name="attack" type="Button" parent="Control" unique_id=496139880]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 276.0
+offset_right = 305.0
+offset_bottom = 358.0
+
+[node name="items" type="Button" parent="Control" unique_id=1712896400]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 274.0
+offset_right = 664.0
+offset_bottom = 356.0
+
+[node name="retreat" type="Button" parent="Control" unique_id=695399534]
+layout_mode = 0
+offset_left = 826.0
+offset_top = 274.0
+offset_right = 1019.0
+offset_bottom = 356.0
