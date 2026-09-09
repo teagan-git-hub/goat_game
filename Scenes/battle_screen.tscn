@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ccood52o8v3lw"]
 
 [ext_resource type="Script" path="res://Scripts/battle_screen.gd" id="1_iuxaa"]
+[ext_resource type="LabelSettings" uid="uid://dsddhm3oa73n0" path="res://Labels/battle_label_settings.tres" id="2_4vnsc"]
 
 [node name="Battle Screen" type="Node2D" unique_id=1572553924]
 script = ExtResource("1_iuxaa")
@@ -18,6 +19,16 @@ offset_top = 488.0
 offset_right = 313.0
 offset_bottom = 587.0
 
+[node name="Label" type="Label" parent="Control/attack" unique_id=453670210]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 246.0
+offset_bottom = 98.0
+text = "Attack"
+label_settings = ExtResource("2_4vnsc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="items" type="Button" parent="Control" unique_id=1956134953]
 layout_mode = 0
 offset_left = 432.0
@@ -25,12 +36,34 @@ offset_top = 483.0
 offset_right = 679.0
 offset_bottom = 582.0
 
+[node name="Label2" type="Label" parent="Control/items" unique_id=483898615]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 247.0
+offset_bottom = 99.0
+text = "Items"
+label_settings = ExtResource("2_4vnsc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="retreat" type="Button" parent="Control" unique_id=963903386]
 layout_mode = 0
 offset_left = 798.0
 offset_top = 478.0
 offset_right = 1045.0
 offset_bottom = 577.0
+
+[node name="Label3" type="Label" parent="Control/retreat" unique_id=2098943519]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 248.0
+offset_bottom = 100.0
+text = "Flee"
+label_settings = ExtResource("2_4vnsc")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Control/attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="Control/items" to="." method="_on_items_pressed"]
