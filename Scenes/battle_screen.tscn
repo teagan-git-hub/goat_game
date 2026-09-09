@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/battle_screen.gd" id="1_iuxaa"]
 [ext_resource type="LabelSettings" uid="uid://dsddhm3oa73n0" path="res://Labels/battle_label_settings.tres" id="2_4vnsc"]
+[ext_resource type="AudioStream" uid="uid://toa0vqb76y5j" path="res://tap.wav" id="3_tjlxq"]
 
 [node name="Battle Screen" type="Node2D" unique_id=1572553924]
 script = ExtResource("1_iuxaa")
@@ -64,6 +65,10 @@ text = "Flee"
 label_settings = ExtResource("2_4vnsc")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="button click" type="AudioStreamPlayer2D" parent="." unique_id=1538844782]
+stream = ExtResource("3_tjlxq")
+bus = &"SFX"
 
 [connection signal="pressed" from="Control/attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="Control/items" to="." method="_on_items_pressed"]
