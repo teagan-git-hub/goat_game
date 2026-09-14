@@ -13,12 +13,15 @@ func _ready() -> void :
 
 func _on_start_pressed() -> void :
 	button_click.play()
+	await get_tree().create_timer(0.05).timeout
 	get_tree().change_scene_to_file("res://Scenes/openworld.tscn")
 
 func _on_version_notes_pressed() -> void :
 	button_click.play()
+	await get_tree().create_timer(0.05).timeout
 	get_tree().change_scene_to_file("res://Scenes/versionnotes.tscn")
 
 func _on_credits_pressed() -> void :
 	button_click.play()
+	await get_tree().create_timer(0.05).timeout
 	get_tree().change_scene_to_file("res://Scenes/credits.tscn")
