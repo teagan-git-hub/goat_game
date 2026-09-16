@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://b7k4rlnkiqq3m"]
 
-[ext_resource type="PackedScene" uid="uid://dsb1y34cerphy" path="res://Scenes/player.tscn" id="1_ekiqp"]
-[ext_resource type="PackedScene" uid="uid://25tswl22p7ug" path="res://Scenes/cow.tscn" id="2_xslkm"]
+[ext_resource type="PackedScene" uid="uid://dsb1y34cerphy" path="res://Scenes/overworld/player.tscn" id="1_ekiqp"]
+[ext_resource type="Script" uid="uid://buw081n70p8sa" path="res://Scripts/openworld.gd" id="1_v0myq"]
+[ext_resource type="PackedScene" uid="uid://25tswl22p7ug" path="res://Scenes/overworld/cow.tscn" id="2_xslkm"]
 
 [node name="Game" type="Node2D" unique_id=709867521]
 y_sort_enabled = true
+script = ExtResource("1_v0myq")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1089738906]
 
@@ -50,7 +52,10 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 100
 text = "Slimed Out!"
 
-[node name="Cow" parent="." unique_id=125860087 instance=ExtResource("2_xslkm")]
-position = Vector2(409, 184)
+[node name="Enemies" type="Node2D" parent="." unique_id=1033276567]
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Cow" parent="Enemies" unique_id=125860087 instance=ExtResource("2_xslkm")]
+position = Vector2(137, 2)
+
+[node name="Cow2" parent="Enemies" unique_id=235353578 instance=ExtResource("2_xslkm")]
+position = Vector2(141, 91)

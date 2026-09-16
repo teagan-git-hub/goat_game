@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://dbw3e4nribsit"]
 
-[ext_resource type="Script" uid="uid://r7yg2s633np6" path="res://Scripts/main_menu.gd" id="1"]
-[ext_resource type="FontFile" uid="uid://ejipmtvvva16" path="res://Pixeloid_Font_1_0/OpenType (.otf)/PixeloidMono.otf" id="2"]
-[ext_resource type="FontFile" uid="uid://fcpa01ljhc3f" path="res://Pixeloid_Font_1_0/OpenType (.otf)/PixeloidSans.otf" id="3"]
-[ext_resource type="Texture2D" uid="uid://bkvmidvjtxhkf" path="res://assets/bgs/orig_big 16.png" id="4"]
-[ext_resource type="PackedScene" uid="uid://clu7s5ger5nrn" path="res://Scenes/fade.tscn" id="5"]
-[ext_resource type="AudioStream" uid="uid://s2lrwjqhoq7e" path="res://assets/music/28 High Quality 16-bit RPG Music/14. Traveling the Sky.mp3" id="6"]
-[ext_resource type="AudioStream" uid="uid://toa0vqb76y5j" path="res://tap.wav" id="7"]
+[ext_resource type="Script" uid="uid://r7yg2s633np6" path="res://Scripts/main_menu.gd" id="1_gf1hs"]
+[ext_resource type="FontFile" uid="uid://ejipmtvvva16" path="res://Pixeloid_Font_1_0/OpenType (.otf)/PixeloidMono.otf" id="2_g08rp"]
+[ext_resource type="FontFile" uid="uid://fcpa01ljhc3f" path="res://Pixeloid_Font_1_0/OpenType (.otf)/PixeloidSans.otf" id="3_sm8o2"]
+[ext_resource type="Texture2D" uid="uid://bkvmidvjtxhkf" path="res://assets/bgs/orig_big 16.png" id="4_w8ahw"]
+[ext_resource type="PackedScene" uid="uid://clu7s5ger5nrn" path="res://Scenes/mainmenu/fade.tscn" id="5_tiefm"]
+[ext_resource type="AudioStream" uid="uid://s2lrwjqhoq7e" path="res://assets/music/28 High Quality 16-bit RPG Music/14. Traveling the Sky.mp3" id="6_hrqsj"]
+[ext_resource type="AudioStream" uid="uid://toa0vqb76y5j" path="res://tap.wav" id="7_5jc73"]
 
 [node name="Main Menu" type="Node2D" unique_id=1134232118]
-script = ExtResource("1")
+script = ExtResource("1_gf1hs")
 
 [node name="Button Manager" type="Control" parent="." unique_id=1061819665]
 process_priority = 5
@@ -26,7 +26,7 @@ offset_left = 403.0
 offset_top = 217.0
 offset_right = 750.0
 offset_bottom = 322.0
-theme_override_fonts/font = ExtResource("2")
+theme_override_fonts/font = ExtResource("2_g08rp")
 theme_override_font_sizes/font_size = 24
 text = "Start Game"
 
@@ -37,7 +37,7 @@ offset_left = 396.0
 offset_top = 490.0
 offset_right = 753.0
 offset_bottom = 589.0
-theme_override_fonts/font = ExtResource("2")
+theme_override_fonts/font = ExtResource("2_g08rp")
 theme_override_font_sizes/font_size = 24
 text = "Version Notes"
 
@@ -48,7 +48,7 @@ offset_left = 401.0
 offset_top = 357.0
 offset_right = 749.0
 offset_bottom = 451.0
-theme_override_fonts/font = ExtResource("2")
+theme_override_fonts/font = ExtResource("2_g08rp")
 theme_override_font_sizes/font_size = 24
 text = "Credits"
 
@@ -58,7 +58,7 @@ offset_left = 301.0
 offset_top = 71.0
 offset_right = 850.0
 offset_bottom = 160.0
-theme_override_fonts/font = ExtResource("3")
+theme_override_fonts/font = ExtResource("3_sm8o2")
 theme_override_font_sizes/font_size = 60
 text = "Goat Game"
 horizontal_alignment = 1
@@ -67,9 +67,9 @@ vertical_alignment = 1
 [node name="OrigBig16" type="Sprite2D" parent="." unique_id=313283175]
 position = Vector2(580.00006, 323)
 scale = Vector2(0.5034722, 0.4984568)
-texture = ExtResource("4")
+texture = ExtResource("4_w8ahw")
 
-[node name="fade" parent="." unique_id=997889527 instance=ExtResource("5")]
+[node name="fade" parent="." unique_id=997889527 instance=ExtResource("5_tiefm")]
 visible = false
 z_index = 6
 
@@ -78,10 +78,10 @@ z_index = 6
 [node name="sounds" type="Node2D" parent="." unique_id=672776980]
 
 [node name="Menu Music" type="AudioStreamPlayer2D" parent="sounds" unique_id=1852591751]
-stream = ExtResource("6")
+stream = ExtResource("6_hrqsj")
 
 [node name="button click" type="AudioStreamPlayer2D" parent="sounds" unique_id=1300466666]
-stream = ExtResource("7")
+stream = ExtResource("7_5jc73")
 bus = &"SFX"
 
 [connection signal="pressed" from="Button Manager/Start" to="." method="_on_start_pressed"]

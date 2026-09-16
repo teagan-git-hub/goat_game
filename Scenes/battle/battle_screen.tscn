@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://ccood52o8v3lw"]
+
+[ext_resource type="Script" path="res://Scripts/battle_screen.gd" id="1_iuxaa"]
+[ext_resource type="LabelSettings" uid="uid://dsddhm3oa73n0" path="res://Labels/battle_label_settings.tres" id="2_4vnsc"]
+[ext_resource type="PackedScene" uid="uid://dsb1y34cerphy" path="res://Scenes/overworld/player.tscn" id="3_f45ta"]
+[ext_resource type="AudioStream" uid="uid://toa0vqb76y5j" path="res://tap.wav" id="3_tjlxq"]
+[ext_resource type="PackedScene" uid="uid://25tswl22p7ug" path="res://Scenes/overworld/cow.tscn" id="3_vmmec"]
+[ext_resource type="Script" uid="uid://crbu36usertn2" path="res://Scripts/manager/BattleManager.gd" id="4_1di1v"]
+[ext_resource type="FontFile" uid="uid://bffu5xrhi4758" path="res://Pixeloid_Font_1_0/TrueType (.ttf)/PixeloidSans.ttf" id="5_cybx4"]
+[ext_resource type="FontFile" uid="uid://ejipmtvvva16" path="res://Pixeloid_Font_1_0/OpenType (.otf)/PixeloidMono.otf" id="6_4mpkf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hj5tp"]
+font_size = 40
+font_color = Color(0.078431375, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_f45ta"]
+font = ExtResource("5_cybx4")
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_ts81q"]
+font = ExtResource("6_4mpkf")
+font_size = 20
+
+[node name="BattleScreen" type="Node2D" unique_id=1572553924]
+script = ExtResource("1_iuxaa")
+
+[node name="BattleManager" type="Node" parent="." unique_id=89798737]
+script = ExtResource("4_1di1v")
+
+[node name="BattleLayer" type="CanvasLayer" parent="." unique_id=1277683319]
+
+[node name="BattlePlayer" parent="BattleLayer" unique_id=2116262629 instance=ExtResource("3_f45ta")]
+process_mode = 4
+position = Vector2(211, 272)
+scale = Vector2(4, 4)
+
+[node name="AnimatedSprite2D" parent="BattleLayer/BattlePlayer" index="0" unique_id=1595521246]
+autoplay = "idle_animation"
+
+[node name="Area2D" parent="BattleLayer/BattlePlayer" index="1" unique_id=1305279323]
+monitoring = false
+
+[node name="Camera2D" parent="BattleLayer/BattlePlayer" index="2" unique_id=735661709]
+enabled = false
+
+[node name="Indicators" type="Control" parent="BattleLayer" unique_id=580971504]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayerTurnArrow" type="Label" parent="BattleLayer/Indicators" unique_id=609695050]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 27.0
+offset_right = 241.0
+offset_bottom = 82.0
+text = "↓"
+label_settings = SubResource("LabelSettings_hj5tp")
+
+[node name="EnemyTurnArrow" type="Label" parent="BattleLayer/Indicators" unique_id=573912573]
+layout_mode = 0
+offset_left = 858.0
+offset_top = 27.0
+offset_right = 898.0
+offset_bottom = 82.0
+text = "↓"
+label_settings = SubResource("LabelSettings_hj5tp")
+
+[node name="Control" type="Control" parent="BattleLayer" unique_id=1077462860]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1148.0
+offset_bottom = 649.0
+
+[node name="attack" type="Button" parent="BattleLayer/Control" unique_id=1406717756]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 488.0
+offset_right = 313.0
+offset_bottom = 587.0
+
+[node name="Label" type="Label" parent="BattleLayer/Control/attack" unique_id=453670210]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 246.0
+offset_bottom = 98.0
+text = "Attack"
+label_settings = ExtResource("2_4vnsc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="items" type="Button" parent="BattleLayer/Control" unique_id=1956134953]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 483.0
+offset_right = 679.0
+offset_bottom = 582.0
+
+[node name="Label2" type="Label" parent="BattleLayer/Control/items" unique_id=483898615]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 247.0
+offset_bottom = 99.0
+text = "Items"
+label_settings = ExtResource("2_4vnsc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="retreat" type="Button" parent="BattleLayer/Control" unique_id=963903386]
+layout_mode = 0
+offset_left = 798.0
+offset_top = 478.0
+offset_right = 1045.0
+offset_bottom = 577.0
+
+[node name="Label3" type="Label" parent="BattleLayer/Control/retreat" unique_id=2098943519]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 248.0
+offset_bottom = 100.0
+text = "Flee"
+label_settings = ExtResource("2_4vnsc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResultLabel" type="Label" parent="BattleLayer/Control" unique_id=439097495]
+visible = false
+layout_mode = 0
+offset_left = 496.0
+offset_top = 41.0
+offset_right = 660.0
+offset_bottom = 90.0
+text = "Victory!"
+label_settings = SubResource("LabelSettings_f45ta")
+
+[node name="DamageLabel" type="Label" parent="BattleLayer/Control" unique_id=1754747200]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_ts81q")
+
+[node name="Enemies" type="Node2D" parent="BattleLayer" unique_id=1970966739]
+
+[node name="Cow" parent="BattleLayer/Enemies" unique_id=235353578 instance=ExtResource("3_vmmec")]
+position = Vector2(716, 257)
+scale = Vector2(4, 4)
+
+[node name="Cow2" parent="BattleLayer/Enemies" unique_id=2096606273 instance=ExtResource("3_vmmec")]
+position = Vector2(973, 349)
+scale = Vector2(4, 4)
+
+[node name="button click" type="AudioStreamPlayer2D" parent="." unique_id=1538844782]
+stream = ExtResource("3_tjlxq")
+bus = &"SFX"
+
+[connection signal="pressed" from="BattleLayer/Control/attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="BattleLayer/Control/items" to="." method="_on_items_pressed"]
+[connection signal="pressed" from="BattleLayer/Control/retreat" to="." method="_on_retreat_pressed"]
+
+[editable path="BattleLayer/BattlePlayer"]
