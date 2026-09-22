@@ -16,6 +16,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		goat_2d.play("idle_animation")
 
+	if GameModeManager.instance._mode == GameModeManager.GameMode.Battle:
+		if h_direction > 0:
+			position.x += 10
+		else:
+			position.x -= 10
 
 # when we collide with an enemy
 #func _on_area_2d_area_entered(area: Area2D) -> void:

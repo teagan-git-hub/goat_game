@@ -37,9 +37,6 @@ scale = Vector2(4, 4)
 [node name="AnimatedSprite2D" parent="BattleLayer/BattlePlayer" index="0" unique_id=1595521246]
 autoplay = "idle_animation"
 
-[node name="Area2D" parent="BattleLayer/BattlePlayer" index="1" unique_id=1305279323]
-monitoring = false
-
 [node name="Camera2D" parent="BattleLayer/BattlePlayer" index="2" unique_id=735661709]
 enabled = false
 

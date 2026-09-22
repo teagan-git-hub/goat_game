@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cw37a3s8t5oiu"]
 
-[ext_resource type="Script" uid="uid://daa04roc31bem" path="res://Scenes/battle/battle_start.gd" id="1_7a61d"]
+[ext_resource type="Script" uid="uid://daa04roc31bem" path="res://Scripts/manager/battle_start.gd" id="1_7a61d"]
 
 [node name="BattleStart" type="Area2D" unique_id=2044380111]
 script = ExtResource("1_7a61d")

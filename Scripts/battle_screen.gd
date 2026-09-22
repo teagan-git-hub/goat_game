@@ -56,6 +56,7 @@ func _on_battle_won() -> void:
 	result_label.visible = true
 	attack_button.disabled = true
 	items_button.disabled = true
+	GameModeManager.instance.leave_battle()
 
 func _on_battle_lost() -> void:
 	result_label.text = "Defeat!"

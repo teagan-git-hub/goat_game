@@ -21,6 +21,7 @@ func battle_start() -> void:
 	animated_sprite_2d_overworld.flip_h = true
 
 func _ready() -> void:
+	animated_sprite_2d_overworld.visible = true
 	health = max_health
 
 func take_damage(amount: float) -> void:
@@ -32,6 +33,8 @@ func take_damage(amount: float) -> void:
 
 	if health == 0.0:
 		defeated.emit()
+		animated_sprite_2d_overworld.visible = false
+		$BattleStart/CollisionShape2D.set_deferred("disabled", true)
 		queue_free()
 
 func is_alive() -> bool:
