@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://25tswl22p7ug"]
 
-[ext_resource type="Script" uid="uid://dinitdd2i42lx" path="res://enemy.gd" id="1_lt87b"]
+[ext_resource type="Script" uid="uid://dinitdd2i42lx" path="res://Scripts/enemy.gd" id="1_bb7ib"]
 [ext_resource type="Texture2D" uid="uid://q7d7guvsejke" path="res://animals_pixel_art_pack_free/sprites/Cow.png" id="1_ss0fy"]
+[ext_resource type="PackedScene" uid="uid://cw37a3s8t5oiu" path="res://Scenes/battle/battle_start.tscn" id="3_bb7ib"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_asfwn"]
 atlas = ExtResource("1_ss0fy")
@@ -77,26 +78,21 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lkxno"]
 size = Vector2(40, 20)
 
-[node name="Cow" type="CharacterBody2D" unique_id=235353578 node_paths=PackedStringArray("overworld_animator", "battle_animator")]
-script = ExtResource("1_lt87b")
-enemy_name = "Cow"
-max_health = 60.0
-overworld_animator = NodePath("AnimatedSprite2D-overworld")
-battle_animator = NodePath("AnimatedSprite2D-battle")
-metadata/_custom_type_script = "uid://dinitdd2i42lx"
+[node name="Cow" type="Node2D" unique_id=203808175]
+script = ExtResource("1_bb7ib")
 
 [node name="AnimatedSprite2D-overworld" type="AnimatedSprite2D" parent="." unique_id=2019985161]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_lkxno")
 
 [node name="AnimatedSprite2D-battle" type="AnimatedSprite2D" parent="." unique_id=197416081]
+visible = false
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_lkxno")
 flip_h = true
 
-[node name="Area2D" type="Area2D" parent="." unique_id=538875405]
-position = Vector2(-3, -11)
-collision_layer = 2
+[node name="BattleStart" parent="." unique_id=2044380111 instance=ExtResource("3_bb7ib")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=692453616]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BattleStart" unique_id=692453616]
+position = Vector2(-3, -11)
 shape = SubResource("RectangleShape2D_lkxno")

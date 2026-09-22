@@ -55,7 +55,7 @@ func leave_battle() -> void:
 
 func enter_battle(
 	enemy: Enemy
-) -> void:
+	) -> void:
 	print("Entering battle with ", enemy.enemy_name)
 	set_mode(GameMode.Battle)
 	print(enemy.name)

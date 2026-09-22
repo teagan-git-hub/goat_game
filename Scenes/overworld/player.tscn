@@ -108,6 +108,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qtiiy"]
+radius = 9.0
 
 [node name="Player" type="CharacterBody2D" unique_id=2116262629]
 script = ExtResource("1_cvnsp")
@@ -117,14 +118,9 @@ position = Vector2(5, -16)
 sprite_frames = SubResource("SpriteFrames_tgcg2")
 animation = &"idle_animation"
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1305279323]
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=393453400]
-position = Vector2(1, -9)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=393453400]
+position = Vector2(-1, -8)
 shape = SubResource("CircleShape2D_qtiiy")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=735661709]
 zoom = Vector2(3, 3)
-
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

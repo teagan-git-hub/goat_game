@@ -18,13 +18,13 @@ func _physics_process(delta: float) -> void:
 
 
 # when we collide with an enemy
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	# Get the enemy (node parent) of the collider touched
-	var enemy := area.get_parent() as Enemy
-
-	if enemy == null:
-		return
-
-	if GameModeManager.instance != null:
-		# start the battle with the enemy we just hit
-		GameModeManager.instance.enter_battle(enemy)
+#func _on_area_2d_area_entered(area: Area2D) -> void:
+	## Get the enemy (node parent) of the collider touched
+	#var enemy := area.get_parent() as Enemy
+#
+	#if enemy == null:
+		#return
+#
+	#if GameModeManager.instance != null:
+		## start the battle with the enemy we just hit
+		#GameModeManager.instance.enter_battle(enemy)

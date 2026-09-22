@@ -1,5 +1,5 @@
 class_name Enemy
-extends CharacterBody2D
+extends Node2D
 
 signal on_damaged(amount:float, remaining_health:float)
 signal defeated
@@ -7,28 +7,18 @@ signal defeated
 @export var enemy_name: String = "Dummy";
 @export var max_health: float = 100.0;
 @export var attack_damage: float = 10.0;
-@export var overworld_animator: AnimatedSprite2D = null;
-@export var battle_animator: AnimatedSprite2D = null;
+@onready var animated_sprite_2d_overworld: AnimatedSprite2D = $"AnimatedSprite2D-overworld"
 @onready var cow: Enemy = $"."
 
 var health: float;
 
 func overworld_start() -> void:
-	if overworld_animator:
-		overworld_animator.visible = true
-		overworld_animator.play("default")
-
-	if battle_animator:
-		battle_animator.visible = false
+	animated_sprite_2d_overworld.play("default")
+	animated_sprite_2d_overworld.flip_h = false
 
 
 func battle_start() -> void:
-	if overworld_animator:
-		overworld_animator.visible = false
-
-	if battle_animator:
-		battle_animator.visible = true
-		battle_animator.play("default")
+	animated_sprite_2d_overworld.flip_h = true
 
 func _ready() -> void:
 	health = max_health
