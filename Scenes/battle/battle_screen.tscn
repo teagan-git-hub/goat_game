@@ -6,12 +6,47 @@
 [ext_resource type="AudioStream" uid="uid://toa0vqb76y5j" path="res://tap.wav" id="3_tjlxq"]
 [ext_resource type="PackedScene" uid="uid://25tswl22p7ug" path="res://Scenes/overworld/cow.tscn" id="3_vmmec"]
 [ext_resource type="Script" uid="uid://crbu36usertn2" path="res://Scripts/manager/BattleManager.gd" id="4_1di1v"]
+[ext_resource type="Texture2D" uid="uid://dy1euohhhd23e" path="res://assets/animals_pixel_art_pack_free/sprites/arrow1.png" id="4_4mpkf"]
 [ext_resource type="FontFile" uid="uid://bffu5xrhi4758" path="res://Pixeloid_Font_1_0/TrueType (.ttf)/PixeloidSans.ttf" id="5_cybx4"]
 [ext_resource type="FontFile" uid="uid://ejipmtvvva16" path="res://Pixeloid_Font_1_0/OpenType (.otf)/PixeloidMono.otf" id="6_4mpkf"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_hj5tp"]
-font_size = 40
-font_color = Color(0.078431375, 1, 1, 1)
+[sub_resource type="Animation" id="Animation_4mpkf"]
+resource_name = "ArrowSway"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TurnArrows:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -15), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yqniy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TurnArrows:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yqniy"]
+_data = {
+&"ArrowSway": SubResource("Animation_4mpkf"),
+&"RESET": SubResource("Animation_yqniy")
+}
 
 [sub_resource type="LabelSettings" id="LabelSettings_f45ta"]
 font = ExtResource("5_cybx4")
@@ -46,23 +81,22 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="PlayerTurnArrow" type="Label" parent="BattleLayer/Indicators" unique_id=609695050]
-layout_mode = 0
-offset_left = 201.0
-offset_top = 27.0
-offset_right = 241.0
-offset_bottom = 82.0
-text = "↓"
-label_settings = SubResource("LabelSettings_hj5tp")
+[node name="TurnArrows" type="Node2D" parent="BattleLayer/Indicators" unique_id=559345000]
 
-[node name="EnemyTurnArrow" type="Label" parent="BattleLayer/Indicators" unique_id=573912573]
-layout_mode = 0
-offset_left = 858.0
-offset_top = 27.0
-offset_right = 898.0
-offset_bottom = 82.0
-text = "↓"
-label_settings = SubResource("LabelSettings_hj5tp")
+[node name="ArrowSway" type="AnimationPlayer" parent="BattleLayer/Indicators/TurnArrows" unique_id=515496457]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_yqniy")
+autoplay = &"ArrowSway"
+
+[node name="PlayerTurnArrow" type="Sprite2D" parent="BattleLayer/Indicators/TurnArrows" unique_id=1798842458]
+position = Vector2(214, 82)
+scale = Vector2(4, 4)
+texture = ExtResource("4_4mpkf")
+
+[node name="EnemyTurnArrow" type="Sprite2D" parent="BattleLayer/Indicators/TurnArrows" unique_id=1443598076]
+position = Vector2(868, 82)
+scale = Vector2(4, 4)
+texture = ExtResource("4_4mpkf")
 
 [node name="Control" type="Control" parent="BattleLayer" unique_id=1077462860]
 layout_mode = 3

@@ -7,8 +7,8 @@ extends Node2D
 @onready var battle_manager: BattleManager = $BattleManager
 @onready var enemies_root: Node2D = $BattleLayer/Enemies
 
-@onready var player_turn_arrow: Label = $BattleLayer/Indicators/PlayerTurnArrow
-@onready var enemy_turn_arrow: Label = $BattleLayer/Indicators/EnemyTurnArrow
+@onready var player_turn_arrow: Sprite2D = $BattleLayer/Indicators/TurnArrows/PlayerTurnArrow
+@onready var enemy_turn_arrow: Sprite2D = $BattleLayer/Indicators/TurnArrows/EnemyTurnArrow
 
 @onready var attack_button: Button = $BattleLayer/Control/attack
 @onready var items_button: Button = $BattleLayer/Control/items

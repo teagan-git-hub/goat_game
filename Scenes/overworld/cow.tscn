@@ -71,7 +71,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_er45c")
 }],
 "loop": 2,
-"name": &"default",
+"name": &"eat",
 "speed": 8.0
 }]
 
@@ -84,11 +84,15 @@ script = ExtResource("1_bb7ib")
 [node name="AnimatedSprite2D-overworld" type="AnimatedSprite2D" parent="." unique_id=2019985161]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_lkxno")
+animation = &"eat"
+autoplay = "eat"
 
 [node name="AnimatedSprite2D-battle" type="AnimatedSprite2D" parent="." unique_id=197416081]
 visible = false
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_lkxno")
+animation = &"eat"
+autoplay = "eat"
 flip_h = true
 
 [node name="BattleStart" parent="." unique_id=2044380111 instance=ExtResource("3_bb7ib")]
