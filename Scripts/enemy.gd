@@ -32,9 +32,8 @@ func take_damage(amount: float) -> void:
 	on_damaged.emit(amount, health)
 
 	if health == 0.0:
+		set_deferred("visible", false)
 		defeated.emit()
-		animated_sprite_2d_overworld.visible = false
-		$BattleStart/CollisionShape2D.set_deferred("disabled", true)
 		queue_free()
 
 func is_alive() -> bool:

@@ -3,7 +3,9 @@ extends Area2D
 func _on_body_entered(body):
 	print("cow touched: ", get_parent().name)
 	var enemy := get_parent() as Enemy
-
+	
+	$CollisionShape2D.set_deferred("disabled", true)
+		
 	if enemy == null:
 		print("cow null")
 		return

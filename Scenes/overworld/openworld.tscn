@@ -395,11 +395,3 @@ position = Vector2(134, 28)
 [node name="Cow2" parent="Enemies" unique_id=228548955 instance=ExtResource("2_xslkm")]
 z_index = 1
 position = Vector2(132, -8)
-
-[node name="Cow3" parent="Enemies" unique_id=203808175 instance=ExtResource("2_xslkm")]
-z_index = 1
-position = Vector2(676, 150)
-
-[node name="Cow4" parent="Enemies" unique_id=1547531338 instance=ExtResource("2_xslkm")]
-z_index = 1
-position = Vector2(636, -117)
