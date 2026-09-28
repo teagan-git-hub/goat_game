@@ -15,7 +15,6 @@ var _mode: GameMode = GameMode.Overworld;
 @onready var _battle_screen: Node2D = $"../BattleScreen"
 @onready var _battle_layer: CanvasLayer = $"../BattleScreen/BattleLayer"
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	instance = self;

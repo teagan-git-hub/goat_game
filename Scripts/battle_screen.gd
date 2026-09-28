@@ -70,7 +70,7 @@ func _show_damage(
 	enemy: Enemy
 ) -> void:
 	damage_label.text = "-%.0f" % amount
-	damage_label.position = enemy.position - Vector2(25, 150)
+	damage_label.position = enemy.position - Vector2(0, 150)
 	damage_label.visible = true
 
 	await get_tree().create_timer(0.5).timeout
