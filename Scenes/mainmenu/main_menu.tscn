@@ -60,7 +60,7 @@ offset_right = 850.0
 offset_bottom = 160.0
 theme_override_fonts/font = ExtResource("3_sm8o2")
 theme_override_font_sizes/font_size = 60
-text = "Goat Game"
+text = "Gompei's Quest"
 horizontal_alignment = 1
 vertical_alignment = 1
 
