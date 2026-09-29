@@ -4,7 +4,6 @@
 [ext_resource type="LabelSettings" uid="uid://dsddhm3oa73n0" path="res://Labels/battle_label_settings.tres" id="2_4vnsc"]
 [ext_resource type="PackedScene" uid="uid://dsb1y34cerphy" path="res://Scenes/overworld/player.tscn" id="3_f45ta"]
 [ext_resource type="AudioStream" uid="uid://toa0vqb76y5j" path="res://tap.wav" id="3_tjlxq"]
-[ext_resource type="PackedScene" uid="uid://25tswl22p7ug" path="res://Scenes/overworld/cow.tscn" id="3_vmmec"]
 [ext_resource type="Script" uid="uid://crbu36usertn2" path="res://Scripts/manager/BattleManager.gd" id="4_1di1v"]
 [ext_resource type="Texture2D" uid="uid://dy1euohhhd23e" path="res://assets/animals_pixel_art_pack_free/sprites/arrow1.png" id="4_4mpkf"]
 [ext_resource type="FontFile" uid="uid://bffu5xrhi4758" path="res://Pixeloid_Font_1_0/TrueType (.ttf)/PixeloidSans.ttf" id="5_cybx4"]
@@ -517,14 +516,6 @@ label_settings = SubResource("LabelSettings_ts81q")
 
 [node name="Enemies" type="Node2D" parent="BattleLayer" unique_id=1970966739]
 z_index = 4
-
-[node name="Cow" parent="BattleLayer/Enemies" unique_id=235353578 instance=ExtResource("3_vmmec")]
-position = Vector2(716, 257)
-scale = Vector2(4, 4)
-
-[node name="Cow2" parent="BattleLayer/Enemies" unique_id=2096606273 instance=ExtResource("3_vmmec")]
-position = Vector2(973, 349)
-scale = Vector2(4, 4)
 
 [node name="button click" type="AudioStreamPlayer2D" parent="." unique_id=1538844782]
 stream = ExtResource("3_tjlxq")
