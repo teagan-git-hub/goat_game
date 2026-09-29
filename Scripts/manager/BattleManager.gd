@@ -1,12 +1,14 @@
 class_name BattleManager
 extends Node
 
+signal health_changed(player_health: float)
 signal turn_changed(player_turn: bool)
 signal battle_won
 signal battle_lost
 
 @export var player_attack_damage: float = 25.0
 @export var player_max_health: float = 100.0
+@onready var player_healthbar: ProgressBar = $"../BattleLayer/Control/ProgressBar"
 
 var player_health: float
 var enemies: Array[Enemy] = []
@@ -21,6 +23,8 @@ func setup(new_enemies: Array[Enemy]) -> void:
 		enemy.defeated.connect(_on_enemy_defeated.bind(enemy))
 
 	player_turn = true
+	player_healthbar.value = 100
+	player_healthbar.visible = true
 	turn_changed.emit(player_turn)
 
 
@@ -57,6 +61,8 @@ func _enemy_turn() -> void:
 
 	player_health = max(player_health - attacker.attack_damage, 0.0)
 	print("Player health: ", player_health)
+	health_changed.emit(player_health)
+	player_healthbar.value = player_health
 
 	if player_health == 0.0:
 		print("Defeat")

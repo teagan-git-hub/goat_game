@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dy1euohhhd23e" path="res://assets/animals_pixel_art_pack_free/sprites/arrow1.png" id="4_4mpkf"]
 [ext_resource type="FontFile" uid="uid://bffu5xrhi4758" path="res://Pixeloid_Font_1_0/TrueType (.ttf)/PixeloidSans.ttf" id="5_cybx4"]
 [ext_resource type="FontFile" uid="uid://ejipmtvvva16" path="res://Pixeloid_Font_1_0/OpenType (.otf)/PixeloidMono.otf" id="6_4mpkf"]
+[ext_resource type="Script" uid="uid://cxpljnc0284ip" path="res://Scripts/healthbar.gd" id="9_yqniy"]
 [ext_resource type="Texture2D" uid="uid://c7gd26jg21v86" path="res://assets/tilemaps/Pixel Plains Free Pack/All free tiles.png" id="10_yqniy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lregp"]
@@ -514,6 +515,16 @@ offset_right = 40.0
 offset_bottom = 23.0
 label_settings = SubResource("LabelSettings_ts81q")
 
+[node name="ProgressBar" type="ProgressBar" parent="BattleLayer/Control" unique_id=330322509]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 294.0
+offset_right = 274.0
+offset_bottom = 321.0
+value = 100.0
+show_percentage = false
+script = ExtResource("9_yqniy")
+
 [node name="Enemies" type="Node2D" parent="BattleLayer" unique_id=1970966739]
 z_index = 4
 
@@ -521,6 +532,7 @@ z_index = 4
 stream = ExtResource("3_tjlxq")
 bus = &"SFX"
 
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="pressed" from="BattleLayer/Control/attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="BattleLayer/Control/items" to="." method="_on_items_pressed"]
 [connection signal="pressed" from="BattleLayer/Control/retreat" to="." method="_on_retreat_pressed"]

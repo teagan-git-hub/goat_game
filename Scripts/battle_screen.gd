@@ -16,6 +16,7 @@ extends Node2D
 
 @onready var result_label: Label = $BattleLayer/Control/ResultLabel
 @onready var damage_label: Label = $BattleLayer/Control/DamageLabel
+@onready var healthbar: ProgressBar = $BattleLayer/Control/ProgressBar
 
 const ENEMY_SLOTS := [
 	Vector2(716, 257),
@@ -26,9 +27,9 @@ const ENEMY_SLOTS := [
 
 func _ready() -> void:
 	battle_manager.turn_changed.connect(_on_turn_changed)
-
 	battle_manager.battle_won.connect(_on_battle_won)
 	battle_manager.battle_lost.connect(_on_battle_lost)
+	healthbar.visible = true
 
 
 func start_battle(encounter: Array[Dictionary]) -> void:
@@ -106,6 +107,7 @@ func _on_battle_won() -> void:
 	attack_button.disabled = true
 	items_button.disabled = true
 
+	healthbar.visible = false
 	GameModeManager.instance.leave_battle()
 
 
@@ -115,7 +117,8 @@ func _on_battle_lost() -> void:
 
 	attack_button.disabled = true
 	items_button.disabled = true
-
+	
+	healthbar.visible = false
 
 func _show_damage(
 	amount: float,
