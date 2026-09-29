@@ -4,21 +4,24 @@ extends Node
 enum GameMode {
 	Overworld,
 	Battle
-};
+}
 
-## Singleton instance
-static var instance: GameModeManager = null;
+static var instance: GameModeManager = null
 
-var _mode: GameMode = GameMode.Overworld;
+const COW_SCENE := preload("res://Scenes/overworld/cow.tscn")
+
+var _mode: GameMode = GameMode.Overworld
+var active_encounter: Array[Dictionary] = []
 
 @onready var _overworld: Node2D = $"../Game"
 @onready var _battle_screen: Node2D = $"../BattleScreen"
 @onready var _battle_layer: CanvasLayer = $"../BattleScreen/BattleLayer"
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	instance = self;
+	instance = self
 	set_mode(GameMode.Overworld)
+
 
 func set_mode(mode: GameMode) -> void:
 	_mode = mode
@@ -50,12 +53,34 @@ func set_mode(mode: GameMode) -> void:
 		else Node.PROCESS_MODE_DISABLED
 	)
 
+
 func leave_battle() -> void:
 	set_mode(GameMode.Overworld)
 
-func enter_battle(
-	enemy: Enemy
-) -> void:
-	print("Entering battle with ", enemy.enemy_name)
+
+func enter_battle(enemy: Enemy) -> void:
+	if _mode == GameMode.Battle:
+		return
+
+	if not is_instance_valid(enemy):
+		return
+
+	active_encounter = [
+		{
+			"scene": COW_SCENE,
+			"enemy_name": enemy.enemy_name,
+			"max_health": enemy.max_health,
+			"attack_damage": enemy.attack_damage
+		},
+		{
+			"scene": COW_SCENE,
+			"enemy_name": enemy.enemy_name,
+			"max_health": enemy.max_health,
+			"attack_damage": enemy.attack_damage
+		}
+	]
+
+	enemy.queue_free()
+
 	set_mode(GameMode.Battle)
-	print(enemy.name)
+	_battle_screen.start_battle(active_encounter)
