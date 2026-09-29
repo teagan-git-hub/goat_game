@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://buw081n70p8sa" path="res://Scripts/openworld.gd" id="1_v0myq"]
 [ext_resource type="PackedScene" uid="uid://25tswl22p7ug" path="res://Scenes/overworld/cow.tscn" id="2_xslkm"]
 [ext_resource type="Texture2D" uid="uid://c7gd26jg21v86" path="res://assets/tilemaps/Pixel Plains Free Pack/All free tiles.png" id="4_dni55"]
-[ext_resource type="PackedScene" uid="uid://brwwlfyhrh74d" path="res://Scenes/pig.tscn" id="5_82nh7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82nh7"]
 texture = ExtResource("4_dni55")
@@ -369,8 +368,3 @@ position = Vector2(134, 28)
 [node name="Cow2" parent="Enemies" unique_id=228548955 instance=ExtResource("2_xslkm")]
 z_index = 1
 position = Vector2(132, -8)
-
-[node name="Npcs" type="Node2D" parent="." unique_id=1977142841]
-
-[node name="Pig" parent="Npcs" unique_id=850167249 instance=ExtResource("5_82nh7")]
-position = Vector2(43, -40)

@@ -80,13 +80,12 @@ shape = SubResource("RectangleShape2D_lkxno")
 
 [node name="Label" type="Label" parent="." unique_id=2033320646]
 visible = false
-z_index = 10
 offset_left = -7.0
 offset_top = -35.0
 offset_right = 121.0
 offset_bottom = -12.0
 theme_override_fonts/font = ExtResource("3_tvyd0")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 8
 text = "The Cows are attacking!!
 Help us!!!!!!!!"
 horizontal_alignment = 1
