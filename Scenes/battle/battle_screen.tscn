@@ -375,6 +375,9 @@ font_size = 40
 font = ExtResource("6_4mpkf")
 font_size = 20
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqniy"]
+bg_color = Color(0, 0.7271877, 0.12675038, 1)
+
 [node name="BattleScreen" type="Node2D" unique_id=1572553924]
 script = ExtResource("1_iuxaa")
 
@@ -521,6 +524,7 @@ offset_left = 141.0
 offset_top = 294.0
 offset_right = 274.0
 offset_bottom = 321.0
+theme_override_styles/background = SubResource("StyleBoxFlat_yqniy")
 value = 100.0
 show_percentage = false
 script = ExtResource("9_yqniy")
