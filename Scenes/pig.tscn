@@ -64,6 +64,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lkxno"]
 size = Vector2(25, 18)
 
+[sub_resource type="Theme" id="Theme_tvyd0"]
+default_font = ExtResource("3_tvyd0")
+default_font_size = 16
+
 [node name="Pig" type="Node2D" unique_id=850167249]
 script = ExtResource("1_oc4b8")
 
