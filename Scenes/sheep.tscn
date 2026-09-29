@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://nm5llu6w8u61"]
+
+[ext_resource type="Script" uid="uid://85u7gpebq742" path="res://Scripts/sheep.gd" id="1_okt0m"]
+[ext_resource type="Texture2D" uid="uid://dof8c6eptivap" path="res://assets/animals_pixel_art_pack_free/sprites/Sheep.png" id="2_dlixe"]
+[ext_resource type="FontFile" uid="uid://ejipmtvvva16" path="res://Pixeloid_Font_1_0/OpenType (.otf)/PixeloidMono.otf" id="3_nqg6p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvhs2"]
+atlas = ExtResource("2_dlixe")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsh87"]
+atlas = ExtResource("2_dlixe")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4xed"]
+atlas = ExtResource("2_dlixe")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45la8"]
+atlas = ExtResource("2_dlixe")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgge2"]
+atlas = ExtResource("2_dlixe")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isq17"]
+atlas = ExtResource("2_dlixe")
+region = Rect2(160, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2gec"]
+atlas = ExtResource("2_dlixe")
+region = Rect2(192, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lkxno"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvhs2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsh87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4xed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45la8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgge2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isq17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2gec")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkxno"]
+size = Vector2(21, 18)
+
+[node name="sheep" type="Node2D" unique_id=770995786]
+script = ExtResource("1_okt0m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1897074400]
+position = Vector2(7, -16)
+sprite_frames = SubResource("SpriteFrames_lkxno")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=589495903]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=505055274]
+position = Vector2(2.5, -9)
+shape = SubResource("RectangleShape2D_lkxno")
+
+[node name="Label" type="Label" parent="." unique_id=1331542196]
+visible = false
+offset_left = -83.0
+offset_top = -62.0
+offset_right = 88.0
+offset_bottom = -20.0
+theme_override_fonts/font = ExtResource("3_nqg6p")
+theme_override_font_sizes/font_size = 12
+text = "Why won't these cows
+say anything??"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

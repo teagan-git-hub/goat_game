@@ -74,6 +74,7 @@ script = ExtResource("1_oc4b8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=347540196]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_lkxno")
+autoplay = "default"
 frame_progress = 0.61700517
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1102177857]
@@ -85,11 +86,12 @@ shape = SubResource("RectangleShape2D_lkxno")
 [node name="Label" type="Label" parent="." unique_id=2033320646]
 visible = false
 z_index = 10
-offset_left = -7.0
-offset_top = -35.0
-offset_right = 121.0
-offset_bottom = -12.0
-theme = SubResource("Theme_tvyd0")
+offset_left = -90.0
+offset_top = -58.0
+offset_right = 102.0
+offset_bottom = -21.0
+theme_override_fonts/font = ExtResource("3_tvyd0")
+theme_override_font_sizes/font_size = 12
 text = "The Cows are attacking!!
 Help us!!!!!!!!"
 horizontal_alignment = 1
