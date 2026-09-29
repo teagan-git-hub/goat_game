@@ -80,15 +80,16 @@ shape = SubResource("RectangleShape2D_lkxno")
 
 [node name="Label" type="Label" parent="." unique_id=1331542196]
 visible = false
+z_index = 10
 offset_left = -83.0
 offset_top = -62.0
 offset_right = 88.0
 offset_bottom = -20.0
 theme_override_fonts/font = ExtResource("3_nqg6p")
 theme_override_font_sizes/font_size = 12
-text = "Why won't these cows
-say anything??"
+text = "Why won't these cows say anything??"
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
