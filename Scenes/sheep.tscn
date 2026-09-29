@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://85u7gpebq742" path="res://Scripts/sheep.gd" id="1_okt0m"]
 [ext_resource type="Texture2D" uid="uid://dof8c6eptivap" path="res://assets/animals_pixel_art_pack_free/sprites/Sheep.png" id="2_dlixe"]
-[ext_resource type="FontFile" uid="uid://ejipmtvvva16" path="res://Pixeloid_Font_1_0/OpenType (.otf)/PixeloidMono.otf" id="3_nqg6p"]
+[ext_resource type="Theme" uid="uid://bx4iuoieatjul" path="res://new_theme.tres" id="3_okt0m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bvhs2"]
 atlas = ExtResource("2_dlixe")
@@ -85,8 +85,7 @@ offset_left = -83.0
 offset_top = -62.0
 offset_right = 88.0
 offset_bottom = -20.0
-theme_override_fonts/font = ExtResource("3_nqg6p")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("3_okt0m")
 text = "Why won't these cows say anything??"
 horizontal_alignment = 1
 autowrap_mode = 2

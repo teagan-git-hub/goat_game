@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bt7y1jxdr60ab" path="res://Scripts/pig.gd" id="1_oc4b8"]
 [ext_resource type="Texture2D" uid="uid://v3mtuv7bx75p" path="res://assets/animals_pixel_art_pack_free/sprites/Pig.png" id="2_tvyd0"]
-[ext_resource type="FontFile" uid="uid://ejipmtvvva16" path="res://Pixeloid_Font_1_0/OpenType (.otf)/PixeloidMono.otf" id="3_tvyd0"]
+[ext_resource type="Theme" uid="uid://bx4iuoieatjul" path="res://new_theme.tres" id="3_tvyd0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k5mk7"]
 atlas = ExtResource("2_tvyd0")
@@ -64,10 +64,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lkxno"]
 size = Vector2(25, 18)
 
-[sub_resource type="Theme" id="Theme_tvyd0"]
-default_font = ExtResource("3_tvyd0")
-default_font_size = 16
-
 [node name="Pig" type="Node2D" unique_id=850167249]
 script = ExtResource("1_oc4b8")
 
@@ -90,8 +86,7 @@ offset_left = -90.0
 offset_top = -58.0
 offset_right = 112.0
 offset_bottom = -21.0
-theme_override_fonts/font = ExtResource("3_tvyd0")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("3_tvyd0")
 text = "The Cows are attacking!! Help us!!!!!!!!"
 horizontal_alignment = 1
 autowrap_mode = 2

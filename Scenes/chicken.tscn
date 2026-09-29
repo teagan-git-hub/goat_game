@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dfhjcp72uy25a" path="res://Scripts/chicken.gd" id="1_7h841"]
 [ext_resource type="Texture2D" uid="uid://cv2tl2eg4niy4" path="res://assets/animals_pixel_art_pack_free/sprites/Chicken.png" id="2_jayuq"]
-[ext_resource type="FontFile" uid="uid://ejipmtvvva16" path="res://Pixeloid_Font_1_0/OpenType (.otf)/PixeloidMono.otf" id="3_x7ecu"]
+[ext_resource type="Theme" uid="uid://bx4iuoieatjul" path="res://new_theme.tres" id="3_jayuq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7h841"]
 atlas = ExtResource("2_jayuq")
@@ -91,8 +91,7 @@ offset_left = -80.0
 offset_top = -51.0
 offset_right = 80.0
 offset_bottom = -17.0
-theme_override_fonts/font = ExtResource("3_x7ecu")
-theme_override_font_sizes/font_size = 12
+theme = ExtResource("3_jayuq")
 text = "The cows are acting rather strange"
 horizontal_alignment = 1
 autowrap_mode = 2
