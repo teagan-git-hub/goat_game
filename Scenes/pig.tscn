@@ -64,6 +64,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lkxno"]
 size = Vector2(25, 18)
 
+[sub_resource type="Theme" id="Theme_tvyd0"]
+default_font = ExtResource("3_tvyd0")
+default_font_size = 12
+
 [node name="Pig" type="Node2D" unique_id=850167249]
 script = ExtResource("1_oc4b8")
 
@@ -85,8 +89,7 @@ offset_left = -7.0
 offset_top = -35.0
 offset_right = 121.0
 offset_bottom = -12.0
-theme_override_fonts/font = ExtResource("3_tvyd0")
-theme_override_font_sizes/font_size = 12
+theme = SubResource("Theme_tvyd0")
 text = "The Cows are attacking!!
 Help us!!!!!!!!"
 horizontal_alignment = 1
