@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://25tswl22p7ug" path="res://Scenes/overworld/cow.tscn" id="2_xslkm"]
 [ext_resource type="Texture2D" uid="uid://c7gd26jg21v86" path="res://assets/tilemaps/Pixel Plains Free Pack/All free tiles.png" id="4_dni55"]
 [ext_resource type="PackedScene" uid="uid://brwwlfyhrh74d" path="res://Scenes/pig.tscn" id="5_82nh7"]
+[ext_resource type="PackedScene" uid="uid://nm5llu6w8u61" path="res://Scenes/sheep.tscn" id="5_rnsrx"]
+[ext_resource type="PackedScene" uid="uid://cfrugfcctgtnf" path="res://Scenes/chicken.tscn" id="6_p45jp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82nh7"]
 texture = ExtResource("4_dni55")
@@ -374,3 +376,9 @@ position = Vector2(132, -8)
 
 [node name="Pig" parent="Npcs" unique_id=850167249 instance=ExtResource("5_82nh7")]
 position = Vector2(43, -40)
+
+[node name="Chicken" parent="Npcs" unique_id=1095378594 instance=ExtResource("6_p45jp")]
+position = Vector2(-116, 33)
+
+[node name="sheep" parent="Npcs" unique_id=770995786 instance=ExtResource("5_rnsrx")]
+position = Vector2(38, 72)
