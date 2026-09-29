@@ -1,0 +1,537 @@
+[gd_scene format=4 uid="uid://ccood52o8v3lw"]
+
+[ext_resource type="Script" path="res://Scripts/battle_screen.gd" id="1_iuxaa"]
+[ext_resource type="LabelSettings" uid="uid://dsddhm3oa73n0" path="res://Labels/battle_label_settings.tres" id="2_4vnsc"]
+[ext_resource type="PackedScene" uid="uid://dsb1y34cerphy" path="res://Scenes/overworld/player.tscn" id="3_f45ta"]
+[ext_resource type="AudioStream" uid="uid://toa0vqb76y5j" path="res://tap.wav" id="3_tjlxq"]
+[ext_resource type="PackedScene" uid="uid://25tswl22p7ug" path="res://Scenes/overworld/cow.tscn" id="3_vmmec"]
+[ext_resource type="Script" uid="uid://crbu36usertn2" path="res://Scripts/manager/BattleManager.gd" id="4_1di1v"]
+[ext_resource type="Texture2D" uid="uid://dy1euohhhd23e" path="res://assets/animals_pixel_art_pack_free/sprites/arrow1.png" id="4_4mpkf"]
+[ext_resource type="FontFile" uid="uid://bffu5xrhi4758" path="res://Pixeloid_Font_1_0/TrueType (.ttf)/PixeloidSans.ttf" id="5_cybx4"]
+[ext_resource type="FontFile" uid="uid://ejipmtvvva16" path="res://Pixeloid_Font_1_0/OpenType (.otf)/PixeloidMono.otf" id="6_4mpkf"]
+[ext_resource type="Texture2D" uid="uid://c7gd26jg21v86" path="res://assets/tilemaps/Pixel Plains Free Pack/All free tiles.png" id="10_yqniy"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lregp"]
+texture = ExtResource("10_yqniy")
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+24:1/0 = 0
+25:1/0 = 0
+26:1/0 = 0
+27:1/0 = 0
+28:1/0 = 0
+29:1/0 = 0
+30:1/0 = 0
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+11:2/0 = 0
+11:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+27:2/0 = 0
+28:2/0 = 0
+29:2/0 = 0
+30:2/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 2.8991642, -8, 2.8991642)
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 2.8991642, -8, 2.8991642)
+8:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+13:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 2.8991642, -8, 2.8991642)
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+16:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 2.8991642, -8, 2.8991642)
+17:3/0 = 0
+19:3/0 = 0
+20:3/0 = 0
+21:3/0 = 0
+22:3/0 = 0
+24:3/0 = 0
+25:3/0 = 0
+26:3/0 = 0
+27:3/0 = 0
+28:3/0 = 0
+29:3/0 = 0
+30:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+22:4/0 = 0
+23:4/0 = 0
+24:4/0 = 0
+25:4/0 = 0
+26:4/0 = 0
+27:4/0 = 0
+28:4/0 = 0
+29:4/0 = 0
+30:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+22:5/0 = 0
+24:5/0 = 0
+25:5/0 = 0
+26:5/0 = 0
+27:5/0 = 0
+28:5/0 = 0
+29:5/0 = 0
+30:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+19:6/0 = 0
+20:6/0 = 0
+21:6/0 = 0
+22:6/0 = 0
+23:6/0 = 0
+24:6/0 = 0
+25:6/0 = 0
+26:6/0 = 0
+27:6/0 = 0
+28:6/0 = 0
+29:6/0 = 0
+30:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 2.8991642, -8, 2.8991642)
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 2.8991642, -8, 2.8991642)
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 2.8991642, -8, 2.8991642)
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+10:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 2.8991642, -8, 2.8991642)
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+13:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 2.8991642, -8, 2.8991642)
+14:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+16:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 2.8991642, -8, 2.8991642)
+17:7/0 = 0
+19:7/0 = 0
+20:7/0 = 0
+21:7/0 = 0
+22:7/0 = 0
+23:7/0 = 0
+24:7/0 = 0
+25:7/0 = 0
+26:7/0 = 0
+27:7/0 = 0
+28:7/0 = 0
+29:7/0 = 0
+30:7/0 = 0
+6:8/0 = 0
+6:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4.858917, 8, 4.858917, 8, 8, -8, 8)
+19:8/0 = 0
+20:8/0 = 0
+21:8/0 = 0
+22:8/0 = 0
+23:8/0 = 0
+24:8/0 = 0
+25:8/0 = 0
+26:8/0 = 0
+27:8/0 = 0
+28:8/0 = 0
+29:8/0 = 0
+30:8/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+6:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -0.08997917, -8, 0)
+7:9/0 = 0
+10:9/0 = 0
+10:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:9/0 = 0
+11:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:9/0 = 0
+12:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:9/0 = 0
+13:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:9/0 = 0
+14:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:9/0 = 0
+15:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+19:9/0 = 0
+20:9/0 = 0
+21:9/0 = 0
+22:9/0 = 0
+23:9/0 = 0
+24:9/0 = 0
+25:9/0 = 0
+26:9/0 = 0
+27:9/0 = 0
+28:9/0 = 0
+29:9/0 = 0
+30:9/0 = 0
+8:10/0 = 0
+8:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:10/0 = 0
+9:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:10/0 = 0
+10:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:10/0 = 0
+11:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:10/0 = 0
+12:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:10/0 = 0
+13:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:10/0 = 0
+15:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+16:10/0 = 0
+16:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+17:10/0 = 0
+17:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+19:10/0 = 0
+20:10/0 = 0
+21:10/0 = 0
+22:10/0 = 0
+23:10/0 = 0
+24:10/0 = 0
+25:10/0 = 0
+26:10/0 = 0
+27:10/0 = 0
+28:10/0 = 0
+29:10/0 = 0
+30:10/0 = 0
+8:11/0 = 0
+8:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:11/0 = 0
+9:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:11/0 = 0
+10:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:11/0 = 0
+11:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:11/0 = 0
+12:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:11/0 = 0
+13:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:11/0 = 0
+14:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:11/0 = 0
+15:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+16:11/0 = 0
+16:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+17:11/0 = 0
+17:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+25:11/0 = 0
+26:11/0 = 0
+27:11/0 = 0
+28:11/0 = 0
+29:11/0 = 0
+30:11/0 = 0
+13:12/0 = 0
+13:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:12/0 = 0
+14:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:12/0 = 0
+15:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+25:12/0 = 0
+26:12/0 = 0
+27:12/0 = 0
+28:12/0 = 0
+29:12/0 = 0
+30:12/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+13:13/0 = 0
+13:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:13/0 = 0
+14:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:13/0 = 0
+15:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+25:13/0 = 0
+26:13/0 = 0
+27:13/0 = 0
+28:13/0 = 0
+29:13/0 = 0
+30:13/0 = 0
+13:14/0 = 0
+13:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:14/0 = 0
+14:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:14/0 = 0
+15:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_tpr5f"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_lregp")
+
+[sub_resource type="Animation" id="Animation_4mpkf"]
+resource_name = "ArrowSway"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TurnArrows:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -15), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yqniy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TurnArrows:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yqniy"]
+_data = {
+&"ArrowSway": SubResource("Animation_4mpkf"),
+&"RESET": SubResource("Animation_yqniy")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_f45ta"]
+font = ExtResource("5_cybx4")
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_ts81q"]
+font = ExtResource("6_4mpkf")
+font_size = 20
+
+[node name="BattleScreen" type="Node2D" unique_id=1572553924]
+script = ExtResource("1_iuxaa")
+
+[node name="BattleManager" type="Node" parent="." unique_id=89798737]
+script = ExtResource("4_1di1v")
+
+[node name="BattleLayer" type="CanvasLayer" parent="." unique_id=1277683319]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="BattleLayer" unique_id=846940339]
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AAAAAAAAAAAaAAwAAAAAAAEAAAAaAAwAAAAAAAIAAAAaAAwAAAAAAAMAAAAcAAkAAAAAAAQAAAAcAAkAAAAAAAUAAAAcAAkAAAAAAAYAAAAcAAkAAAAAAAcAAAAcAAkAAAAAAAgAAAAcAAkAAAAAAAkAAAAaAAwAAAAAAAoAAAAaAAwAAAAAAAsAAAAaAAwAAAABAAAAAAAaAAwAAAABAAEAAAAaAAwAAAABAAIAAAAaAAwAAAABAAMAAAAcAAkAAAABAAQAAAAcAAkAAAABAAUAAAAcAAkAAAABAAYAAAAcAAkAAAABAAcAAAAcAAkAAAABAAgAAAAcAAkAAAABAAkAAAAaAAwAAAABAAoAAAAaAAwAAAABAAsAAAAaAAwAAAACAAAAAAAaAAwAAAACAAEAAAAaAAwAAAACAAIAAAAaAAwAAAACAAMAAAAcAAkAAAACAAQAAAAcAAkAAAACAAUAAAAcAAkAAAACAAYAAAAcAAkAAAACAAcAAAAcAAkAAAACAAgAAAAcAAkAAAACAAkAAAAaAAwAAAACAAoAAAAaAAwAAAACAAsAAAAaAAwAAAADAAAAAAAaAAwAAAADAAEAAAAaAAwAAAADAAIAAAAaAAwAAAADAAMAAAAcAAkAAAADAAQAAAAcAAkAAAADAAUAAAAcAAkAAAADAAYAAAAcAAkAAAADAAcAAAAcAAkAAAADAAgAAAAcAAkAAAADAAkAAAAaAAwAAAADAAoAAAAaAAwAAAADAAsAAAAaAAwAAAAEAAAAAAAaAAwAAAAEAAEAAAAaAAwAAAAEAAIAAAAaAAwAAAAEAAMAAAAcAAkAAAAEAAQAAAAcAAkAAAAEAAUAAAAcAAkAAAAEAAYAAAAcAAkAAAAEAAcAAAAcAAkAAAAEAAgAAAAcAAkAAAAEAAkAAAAaAAwAAAAEAAoAAAAaAAwAAAAEAAsAAAAaAAwAAAAFAAAAAAAaAAwAAAAFAAEAAAAaAAwAAAAFAAIAAAAaAAwAAAAFAAMAAAAcAAkAAAAFAAQAAAAcAAkAAAAFAAUAAAAcAAkAAAAFAAYAAAAcAAkAAAAFAAcAAAAcAAkAAAAFAAgAAAAcAAkAAAAFAAkAAAAaAAwAAAAFAAoAAAAaAAwAAAAFAAsAAAAaAAwAAAAGAAAAAAAaAAwAAAAGAAEAAAAaAAwAAAAGAAIAAAAaAAwAAAAGAAMAAAAcAAkAAAAGAAQAAAAcAAkAAAAGAAUAAAAcAAkAAAAGAAYAAAAcAAkAAAAGAAcAAAAcAAkAAAAGAAgAAAAcAAkAAAAGAAkAAAAaAAwAAAAGAAoAAAAaAAwAAAAGAAsAAAAaAAwAAAAHAAAAAAAaAAwAAAAHAAEAAAAaAAwAAAAHAAIAAAAaAAwAAAAHAAMAAAAcAAkAAAAHAAQAAAAcAAkAAAAHAAUAAAAcAAkAAAAHAAYAAAAcAAkAAAAHAAcAAAAcAAkAAAAHAAgAAAAcAAkAAAAHAAkAAAAaAAwAAAAHAAoAAAAaAAwAAAAHAAsAAAAaAAwAAAAIAAAAAAAaAAwAAAAIAAEAAAAaAAwAAAAIAAIAAAAaAAwAAAAIAAMAAAAcAAkAAAAIAAQAAAAcAAkAAAAIAAUAAAAcAAkAAAAIAAYAAAAcAAkAAAAIAAcAAAAcAAkAAAAIAAgAAAAcAAkAAAAIAAkAAAAaAAwAAAAIAAoAAAAaAAwAAAAIAAsAAAAaAAwAAAAJAAAAAAAaAAwAAAAJAAEAAAAaAAwAAAAJAAIAAAAaAAwAAAAJAAMAAAAcAAkAAAAJAAQAAAAcAAkAAAAJAAUAAAAcAAkAAAAJAAYAAAAcAAkAAAAJAAcAAAAcAAkAAAAJAAgAAAAcAAkAAAAJAAkAAAAaAAwAAAAJAAoAAAAaAAwAAAAJAAsAAAAaAAwAAAAKAAAAAAAaAAwAAAAKAAEAAAAaAAwAAAAKAAIAAAAaAAwAAAAKAAMAAAAcAAkAAAAKAAQAAAAcAAkAAAAKAAUAAAAcAAkAAAAKAAYAAAAcAAkAAAAKAAcAAAAcAAkAAAAKAAgAAAAcAAkAAAAKAAkAAAAaAAwAAAAKAAoAAAAaAAwAAAAKAAsAAAAaAAwAAAALAAAAAAAaAAwAAAALAAEAAAAaAAwAAAALAAIAAAAaAAwAAAALAAMAAAAcAAkAAAALAAQAAAAcAAkAAAALAAUAAAAcAAkAAAALAAYAAAAcAAkAAAALAAcAAAAcAAkAAAALAAgAAAAcAAkAAAALAAkAAAAaAAwAAAALAAoAAAAaAAwAAAALAAsAAAAaAAwAAAAMAAAAAAAaAAwAAAAMAAEAAAAaAAwAAAAMAAIAAAAaAAwAAAAMAAMAAAAcAAkAAAAMAAQAAAAcAAkAAAAMAAUAAAAcAAkAAAAMAAYAAAAcAAkAAAAMAAcAAAAcAAkAAAAMAAgAAAAcAAkAAAAMAAkAAAAaAAwAAAAMAAoAAAAaAAwAAAAMAAsAAAAaAAwAAAANAAAAAAAaAAwAAAANAAEAAAAaAAwAAAANAAIAAAAaAAwAAAANAAMAAAAcAAkAAAANAAQAAAAcAAkAAAANAAUAAAAcAAkAAAANAAYAAAAcAAkAAAANAAcAAAAcAAkAAAANAAgAAAAcAAkAAAANAAkAAAAaAAwAAAANAAoAAAAaAAwAAAANAAsAAAAaAAwAAAAOAAAAAAAaAAwAAAAOAAEAAAAaAAwAAAAOAAIAAAAaAAwAAAAOAAMAAAAcAAkAAAAOAAQAAAAcAAkAAAAOAAUAAAAcAAkAAAAOAAYAAAAcAAkAAAAOAAcAAAAcAAkAAAAOAAgAAAAcAAkAAAAOAAkAAAAaAAwAAAAOAAoAAAAaAAwAAAAOAAsAAAAaAAwAAAAPAAAAAAAaAAwAAAAPAAEAAAAaAAwAAAAPAAIAAAAaAAwAAAAPAAMAAAAcAAkAAAAPAAQAAAAcAAkAAAAPAAUAAAAcAAkAAAAPAAYAAAAcAAkAAAAPAAcAAAAcAAkAAAAPAAgAAAAcAAkAAAAPAAkAAAAaAAwAAAAPAAoAAAAaAAwAAAAPAAsAAAAaAAwAAAAQAAAAAAAaAAwAAAAQAAEAAAAaAAwAAAAQAAIAAAAaAAwAAAAQAAMAAAAcAAkAAAAQAAQAAAAcAAkAAAAQAAUAAAAcAAkAAAAQAAYAAAAcAAkAAAAQAAcAAAAcAAkAAAAQAAgAAAAcAAkAAAAQAAkAAAAaAAwAAAAQAAoAAAAaAAwAAAAQAAsAAAAaAAwAAAARAAAAAAAaAAwAAAARAAEAAAAaAAwAAAARAAIAAAAaAAwAAAARAAMAAAAcAAkAAAARAAQAAAAcAAkAAAARAAUAAAAcAAkAAAARAAYAAAAcAAkAAAARAAcAAAAcAAkAAAARAAgAAAAcAAkAAAARAAkAAAAaAAwAAAARAAoAAAAaAAwAAAARAAsAAAAaAAwAAAASAAAAAAAaAAwAAAASAAEAAAAaAAwAAAASAAIAAAAaAAwAAAASAAMAAAAcAAkAAAASAAQAAAAcAAkAAAASAAUAAAAcAAkAAAASAAYAAAAcAAkAAAASAAcAAAAcAAkAAAASAAgAAAAcAAkAAAASAAkAAAAaAAwAAAASAAoAAAAaAAwAAAASAAsAAAAaAAwAAAATAAAAAAAaAAwAAAATAAEAAAAaAAwAAAATAAIAAAAaAAwAAAATAAMAAAAcAAkAAAATAAQAAAAcAAkAAAATAAUAAAAcAAkAAAATAAYAAAAcAAkAAAATAAcAAAAcAAkAAAATAAgAAAAcAAkAAAATAAkAAAAaAAwAAAATAAoAAAAaAAwAAAATAAsAAAAaAAwAAAAUAAAAAAAaAAwAAAAUAAEAAAAaAAwAAAAUAAIAAAAaAAwAAAAUAAMAAAAcAAkAAAAUAAQAAAAcAAkAAAAUAAUAAAAcAAkAAAAUAAYAAAAcAAkAAAAUAAcAAAAcAAkAAAAUAAgAAAAcAAkAAAAUAAkAAAAaAAwAAAAUAAoAAAAaAAwAAAAUAAsAAAAaAAwAAAAVAAAAAAAaAAwAAAAVAAEAAAAaAAwAAAAVAAIAAAAaAAwAAAAVAAMAAAAcAAkAAAAVAAQAAAAcAAkAAAAVAAUAAAAcAAkAAAAVAAYAAAAcAAkAAAAVAAcAAAAcAAkAAAAVAAgAAAAcAAkAAAAVAAkAAAAaAAwAAAAVAAoAAAAaAAwAAAAVAAsAAAAaAAwAAAAWAAAAAAAaAAwAAAAWAAEAAAAaAAwAAAAWAAIAAAAaAAwAAAAWAAMAAAAcAAkAAAAWAAQAAAAcAAkAAAAWAAUAAAAcAAkAAAAWAAYAAAAcAAkAAAAWAAcAAAAcAAkAAAAWAAgAAAAcAAkAAAAWAAkAAAAaAAwAAAAWAAoAAAAaAAwAAAAWAAsAAAAaAAwAAAAXAAAAAAAaAAwAAAAXAAEAAAAaAAwAAAAXAAIAAAAaAAwAAAAXAAMAAAAcAAkAAAAXAAQAAAAcAAkAAAAXAAUAAAAcAAkAAAAXAAYAAAAcAAkAAAAXAAcAAAAcAAkAAAAXAAgAAAAcAAkAAAAXAAkAAAAaAAwAAAAXAAoAAAAaAAwAAAAXAAsAAAAaAAwAAAAYAAAAAAAaAAwAAAAYAAEAAAAaAAwAAAAYAAIAAAAaAAwAAAAYAAMAAAAcAAkAAAAYAAQAAAAcAAkAAAAYAAUAAAAcAAkAAAAYAAYAAAAcAAkAAAAYAAcAAAAcAAkAAAAYAAgAAAAcAAkAAAAYAAkAAAAaAAwAAAAYAAoAAAAaAAwAAAAYAAsAAAAaAAwAAAAAAA8AAAAaAAwAAAABAA8AAAAaAAwAAAACAA8AAAAaAAwAAAADAA8AAAAaAAwAAAAEAA8AAAAaAAwAAAAFAA8AAAAaAAwAAAAGAA8AAAAaAAwAAAAHAA8AAAAaAAwAAAAIAA8AAAAaAAwAAAAJAA8AAAAaAAwAAAAKAA4AAAAaAAwAAAAKAA8AAAAaAAwAAAALAA4AAAAaAAwAAAALAA8AAAAaAAwAAAAMAA4AAAAaAAwAAAAMAA8AAAAaAAwAAAANAA4AAAAaAAwAAAANAA8AAAAaAAwAAAAOAA4AAAAaAAwAAAAOAA8AAAAaAAwAAAAPAA4AAAAaAAwAAAAPAA8AAAAaAAwAAAAQAA4AAAAaAAwAAAAQAA8AAAAaAAwAAAARAA4AAAAaAAwAAAARAA8AAAAaAAwAAAASAA4AAAAaAAwAAAASAA8AAAAaAAwAAAATAA4AAAAaAAwAAAATAA8AAAAaAAwAAAAUAA4AAAAaAAwAAAAUAA8AAAAaAAwAAAAVAA4AAAAaAAwAAAAVAA8AAAAaAAwAAAAWAA4AAAAaAAwAAAAWAA8AAAAaAAwAAAAXAA4AAAAaAAwAAAAXAA8AAAAaAAwAAAAYAA4AAAAaAAwAAAAYAA8AAAAaAAwAAAAZAAkAAAAaAAwAAAAZAAoAAAAaAAwAAAAZAAsAAAAaAAwAAAAZAA4AAAAaAAwAAAAZAA8AAAAaAAwAAAAAAP//AAAaAAwAAAABAP//AAAaAAwAAAACAP//AAAaAAwAAAADAP//AAAaAAwAAAAEAP//AAAaAAwAAAAFAP//AAAaAAwAAAAGAP//AAAaAAwAAAAHAP//AAAaAAwAAAAIAP//AAAaAAwAAAAJAP//AAAaAAwAAAAKAP//AAAaAAwAAAALAP//AAAaAAwAAAAMAP//AAAaAAwAAAANAP//AAAaAAwAAAAOAP//AAAaAAwAAAAPAP//AAAaAAwAAAAQAP//AAAaAAwAAAARAP//AAAaAAwAAAASAP//AAAaAAwAAAATAP//AAAaAAwAAAAUAP//AAAaAAwAAAAVAP//AAAaAAwAAAAWAP//AAAaAAwAAAAXAP//AAAaAAwAAAAYAP//AAAaAAwAAAAZAP//AAAaAAwAAAAZAAAAAAAaAAwAAAAZAAEAAAAaAAwAAAAaAP//AAAaAAwAAAAaAAAAAAAaAAwAAAAaAAEAAAAaAAwAAAAZAAIAAAAaAAwAAAAaAAIAAAAaAAwAAAAaAAkAAAAaAAwAAAAaAAoAAAAaAAwAAAAaAAsAAAAaAAwAAAAaAAwAAAAaAAwAAAAaAA0AAAAaAAwAAAAaAA4AAAAaAAwAAAAaAA8AAAAaAAwAAAAAAAwAAAAaAAwAAAAAAA0AAAAaAAwAAAAAAA4AAAAaAAwAAAABAAwAAAAaAAwAAAABAA0AAAAaAAwAAAABAA4AAAAaAAwAAAACAAwAAAAaAAwAAAACAA0AAAAaAAwAAAACAA4AAAAaAAwAAAADAAwAAAAaAAwAAAADAA0AAAAaAAwAAAADAA4AAAAaAAwAAAAEAAwAAAAaAAwAAAAEAA0AAAAaAAwAAAAEAA4AAAAaAAwAAAAFAAwAAAAaAAwAAAAFAA0AAAAaAAwAAAAFAA4AAAAaAAwAAAAGAAwAAAAaAAwAAAAGAA0AAAAaAAwAAAAGAA4AAAAaAAwAAAAHAAwAAAAaAAwAAAAHAA0AAAAaAAwAAAAHAA4AAAAaAAwAAAAIAAwAAAAaAAwAAAAIAA0AAAAaAAwAAAAIAA4AAAAaAAwAAAAJAAwAAAAaAAwAAAAJAA0AAAAaAAwAAAAJAA4AAAAaAAwAAAAKAAwAAAAaAAwAAAAKAA0AAAAaAAwAAAALAAwAAAAaAAwAAAALAA0AAAAaAAwAAAAMAAwAAAAaAAwAAAAMAA0AAAAaAAwAAAANAAwAAAAaAAwAAAANAA0AAAAaAAwAAAAOAAwAAAAaAAwAAAAOAA0AAAAaAAwAAAAPAAwAAAAaAAwAAAAPAA0AAAAaAAwAAAAQAAwAAAAaAAwAAAAQAA0AAAAaAAwAAAARAAwAAAAaAAwAAAARAA0AAAAaAAwAAAASAAwAAAAaAAwAAAASAA0AAAAaAAwAAAATAAwAAAAaAAwAAAATAA0AAAAaAAwAAAAUAAwAAAAaAAwAAAAUAA0AAAAaAAwAAAAVAAwAAAAaAAwAAAAVAA0AAAAaAAwAAAAWAAwAAAAaAAwAAAAWAA0AAAAaAAwAAAAXAAwAAAAaAAwAAAAXAA0AAAAaAAwAAAAYAAwAAAAaAAwAAAAYAA0AAAAaAAwAAAAZAAwAAAAaAAwAAAAZAA0AAAAaAAwAAAAZAAMAAAAcAAkAAAAZAAQAAAAcAAkAAAAZAAUAAAAcAAkAAAAZAAYAAAAcAAkAAAAZAAcAAAAcAAkAAAAZAAgAAAAcAAkAAAAaAAMAAAAcAAkAAAAaAAQAAAAcAAkAAAAaAAUAAAAcAAkAAAAaAAYAAAAcAAkAAAAaAAcAAAAcAAkAAAAaAAgAAAAcAAkAAAA=")
+tile_set = SubResource("TileSet_tpr5f")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="BattleLayer/TileMapLayer" unique_id=303438488]
+z_index = 1
+tile_map_data = PackedByteArray("AAAAAAAAAAAcAAQAAAAAAAEAAAAeAAQAAAACAAAAAAAdAAQAAAAEAAEAAAAYAAQAAAAHAAIAAAAZAAMAAAAIAAIAAAAZAAMAAAAJAAAAAAAbAAMAAAAKAAEAAAAdAAQAAAAKAAIAAAAaAAMAAAALAP//AAAYAAMAAAAPAAIAAAAYAAQAAAAQAAAAAAAeAAQAAAAQAAEAAAAeAAMAAAAQAAIAAAAYAAQAAAASAAAAAAAcAAQAAAATAAAAAAAYAAMAAAATAAEAAAAbAAMAAAAUAP//AAAdAAMAAAAVAP//AAAeAAQAAAAaAAEAAAAcAAMAAAAaAAIAAAAdAAMAAAABAAoAAAAcAAQAAAABAAwAAAAdAAMAAAACAA4AAAAZAAQAAAADAAkAAAAeAAMAAAAFAA0AAAAYAAQAAAAIAAoAAAAcAAMAAAAIAAsAAAAaAAMAAAAJAAwAAAAaAAQAAAAJAA4AAAAeAAQAAAAKAAsAAAAbAAQAAAAKAA0AAAAdAAMAAAAMAA0AAAAbAAMAAAAMAA8AAAAcAAQAAAANAA8AAAAdAAQAAAAOAAsAAAAeAAQAAAAOAA0AAAAaAAQAAAARAAwAAAAaAAQAAAARAA8AAAAbAAQAAAASAAoAAAAcAAMAAAASAA0AAAAaAAMAAAAVAAsAAAAZAAMAAAAVAA0AAAAcAAQAAAAWAAsAAAAdAAMAAAAYAAwAAAAcAAMAAAAYAA0AAAAbAAQAAAAZAAkAAAAbAAQAAAAZAAsAAAAcAAMAAAAZAA0AAAAbAAMAAAAZAA8AAAAZAAMAAAAaAA8AAAAeAAQAAAAAAAQAAAAZAAEAAAABAAQAAAAYAAEAAAACAAUAAAAbAAEAAAACAAcAAAAYAAEAAAAFAAUAAAAbAAEAAAAJAAYAAAAdAAEAAAAKAAgAAAAcAAEAAAALAAQAAAAbAAEAAAAMAAQAAAAdAAEAAAANAAUAAAAaAAEAAAANAAYAAAAaAAEAAAAOAAQAAAAZAAEAAAAOAAYAAAAYAAEAAAAPAAMAAAAYAAEAAAAQAAcAAAAcAAEAAAARAAgAAAAeAAEAAAASAAYAAAAYAAEAAAAUAAgAAAAdAAEAAAAVAAQAAAAdAAEAAAAWAAYAAAAbAAEAAAAXAAMAAAAZAAEAAAAXAAQAAAAaAAEAAAAaAAcAAAAaAAEAAAA=")
+tile_set = SubResource("TileSet_tpr5f")
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="BattleLayer/TileMapLayer" unique_id=1129271658]
+z_index = 1
+tile_map_data = PackedByteArray("AAAEAAIAAAAVAAMAAAAKAP//AAAWAAMAAAAMAAAAAAAUAAMAAAAOAAEAAAAWAAMAAAAOAAIAAAAXAAQAAAAYAAAAAAATAAMAAAAZAAAAAAATAAMAAAABAA0AAAAVAAMAAAADAA0AAAAVAAQAAAAEAAwAAAAUAAMAAAAFAAkAAAATAAQAAAAFAA8AAAAVAAQAAAAIAAwAAAAWAAQAAAAKAAsAAAAUAAQAAAAMAA0AAAAXAAQAAAANAAsAAAATAAMAAAANAAwAAAATAAMAAAAQAAkAAAAUAAQAAAARAA8AAAATAAQAAAAUAA8AAAATAAMAAAAXAA8AAAAVAAMAAAAYAAkAAAAVAAMAAAAYAAwAAAATAAQAAAAaAA4AAAAUAAMAAAA=")
+tile_set = SubResource("TileSet_tpr5f")
+
+[node name="TileMapLayer4" type="TileMapLayer" parent="BattleLayer/TileMapLayer" unique_id=1798029822]
+z_index = 2
+tile_map_data = PackedByteArray("AAAEAAIAAAAVAAMAAAAKAP//AAAWAAMAAAAMAAAAAAAUAAMAAAAOAAEAAAAWAAMAAAAOAAIAAAAXAAQAAAAYAAAAAAATAAMAAAAZAAAAAAATAAMAAAABAA0AAAAVAAMAAAADAA0AAAAVAAQAAAAEAAwAAAAUAAMAAAAFAAkAAAATAAQAAAAFAA8AAAAVAAQAAAAIAAwAAAARAAEAAAAKAAsAAAAUAAQAAAAMAA0AAAAXAAQAAAANAAsAAAATAAMAAAANAAwAAAATAAMAAAAQAAkAAAAUAAQAAAARAA8AAAATAAQAAAAUAA8AAAATAAMAAAAXAA8AAAAVAAMAAAAYAAkAAAAVAAMAAAAYAAwAAAARAAYAAAAaAA4AAAAUAAMAAAAWAAsAAAAPAAUAAAAWAAwAAAAPAAYAAAAWAA0AAAAPAAcAAAAXAAsAAAAQAAUAAAAXAAwAAAAQAAYAAAAXAA0AAAAQAAcAAAAYAAsAAAARAAUAAAAYAA0AAAARAAcAAAAPAAAAAAAMAAUAAAAPAAEAAAAMAAYAAAAPAAIAAAAMAAcAAAAQAAAAAAANAAUAAAAQAAEAAAANAAYAAAAQAAIAAAANAAcAAAARAAAAAAAOAAUAAAARAAEAAAAOAAYAAAARAAIAAAAOAAcAAAAFAP//AAAMAAEAAAAFAAAAAAAMAAIAAAAFAAEAAAAMAAMAAAAGAP//AAANAAEAAAAGAAAAAAANAAIAAAAGAAEAAAANAAMAAAAHAP//AAAOAAEAAAAHAAAAAAAOAAIAAAAHAAEAAAAOAAMAAAAGAAwAAAAPAAEAAAAGAA0AAAAPAAIAAAAGAA4AAAAPAAMAAAAHAAwAAAAQAAEAAAAHAA0AAAAQAAIAAAAHAA4AAAAQAAMAAAAIAA0AAAARAAIAAAAIAA4AAAARAAMAAAAOAAoAAAAJAAQAAAAOAAsAAAAJAAUAAAAOAAwAAAAJAAYAAAAOAA0AAAAJAAcAAAAPAAoAAAAKAAQAAAAPAAsAAAAKAAUAAAAPAAwAAAAKAAYAAAAPAA0AAAAKAAcAAAAQAAoAAAALAAQAAAAQAAsAAAALAAUAAAAQAAwAAAALAAYAAAAQAA0AAAALAAcAAAA=")
+tile_set = SubResource("TileSet_tpr5f")
+
+[node name="BattlePlayer" parent="BattleLayer" unique_id=2116262629 instance=ExtResource("3_f45ta")]
+process_mode = 4
+z_index = 4
+position = Vector2(211, 272)
+scale = Vector2(4, 4)
+
+[node name="AnimatedSprite2D" parent="BattleLayer/BattlePlayer" index="0" unique_id=1595521246]
+autoplay = "idle_animation"
+
+[node name="Camera2D" parent="BattleLayer/BattlePlayer" index="2" unique_id=735661709]
+enabled = false
+
+[node name="Indicators" type="Control" parent="BattleLayer" unique_id=580971504]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TurnArrows" type="Node2D" parent="BattleLayer/Indicators" unique_id=559345000]
+z_index = 5
+
+[node name="ArrowSway" type="AnimationPlayer" parent="BattleLayer/Indicators/TurnArrows" unique_id=515496457]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_yqniy")
+autoplay = &"ArrowSway"
+
+[node name="PlayerTurnArrow" type="Sprite2D" parent="BattleLayer/Indicators/TurnArrows" unique_id=1798842458]
+position = Vector2(214, 82)
+scale = Vector2(4, 4)
+texture = ExtResource("4_4mpkf")
+
+[node name="EnemyTurnArrow" type="Sprite2D" parent="BattleLayer/Indicators/TurnArrows" unique_id=1443598076]
+position = Vector2(868, 82)
+scale = Vector2(4, 4)
+texture = ExtResource("4_4mpkf")
+
+[node name="Control" type="Control" parent="BattleLayer" unique_id=1077462860]
+z_index = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1148.0
+offset_bottom = 649.0
+
+[node name="attack" type="Button" parent="BattleLayer/Control" unique_id=1406717756]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 488.0
+offset_right = 313.0
+offset_bottom = 587.0
+
+[node name="Label" type="Label" parent="BattleLayer/Control/attack" unique_id=453670210]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 246.0
+offset_bottom = 98.0
+text = "Attack"
+label_settings = ExtResource("2_4vnsc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="items" type="Button" parent="BattleLayer/Control" unique_id=1956134953]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 483.0
+offset_right = 679.0
+offset_bottom = 582.0
+
+[node name="Label2" type="Label" parent="BattleLayer/Control/items" unique_id=483898615]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 247.0
+offset_bottom = 99.0
+text = "Items"
+label_settings = ExtResource("2_4vnsc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="retreat" type="Button" parent="BattleLayer/Control" unique_id=963903386]
+layout_mode = 0
+offset_left = 798.0
+offset_top = 478.0
+offset_right = 1045.0
+offset_bottom = 577.0
+
+[node name="Label3" type="Label" parent="BattleLayer/Control/retreat" unique_id=2098943519]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 248.0
+offset_bottom = 100.0
+text = "Flee"
+label_settings = ExtResource("2_4vnsc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResultLabel" type="Label" parent="BattleLayer/Control" unique_id=439097495]
+visible = false
+layout_mode = 0
+offset_left = 496.0
+offset_top = 41.0
+offset_right = 660.0
+offset_bottom = 90.0
+text = "Victory!"
+label_settings = SubResource("LabelSettings_f45ta")
+
+[node name="DamageLabel" type="Label" parent="BattleLayer/Control" unique_id=1754747200]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_ts81q")
+
+[node name="Enemies" type="Node2D" parent="BattleLayer" unique_id=1970966739]
+z_index = 4
+
+[node name="Cow" parent="BattleLayer/Enemies" unique_id=235353578 instance=ExtResource("3_vmmec")]
+position = Vector2(716, 257)
+scale = Vector2(4, 4)
+
+[node name="Cow2" parent="BattleLayer/Enemies" unique_id=2096606273 instance=ExtResource("3_vmmec")]
+position = Vector2(973, 349)
+scale = Vector2(4, 4)
+
+[node name="button click" type="AudioStreamPlayer2D" parent="." unique_id=1538844782]
+stream = ExtResource("3_tjlxq")
+bus = &"SFX"
+
+[connection signal="pressed" from="BattleLayer/Control/attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="BattleLayer/Control/items" to="." method="_on_items_pressed"]
+[connection signal="pressed" from="BattleLayer/Control/retreat" to="." method="_on_retreat_pressed"]
+
+[editable path="BattleLayer/BattlePlayer"]

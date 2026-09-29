@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://25tswl22p7ug"]
+
+[ext_resource type="Script" uid="uid://dinitdd2i42lx" path="res://Scripts/enemy.gd" id="1_bb7ib"]
+[ext_resource type="Texture2D" uid="uid://q7d7guvsejke" path="res://animals_pixel_art_pack_free/sprites/Cow.png" id="1_ss0fy"]
+[ext_resource type="PackedScene" uid="uid://cw37a3s8t5oiu" path="res://Scenes/battle/battle_start.tscn" id="3_bb7ib"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asfwn"]
+atlas = ExtResource("1_ss0fy")
+region = Rect2(0, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4wuh"]
+atlas = ExtResource("1_ss0fy")
+region = Rect2(48, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxqef"]
+atlas = ExtResource("1_ss0fy")
+region = Rect2(96, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpkvw"]
+atlas = ExtResource("1_ss0fy")
+region = Rect2(144, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oad1y"]
+atlas = ExtResource("1_ss0fy")
+region = Rect2(192, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkidu"]
+atlas = ExtResource("1_ss0fy")
+region = Rect2(240, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjkae"]
+atlas = ExtResource("1_ss0fy")
+region = Rect2(288, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kflls"]
+atlas = ExtResource("1_ss0fy")
+region = Rect2(336, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_er45c"]
+atlas = ExtResource("1_ss0fy")
+region = Rect2(384, 96, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lkxno"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asfwn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4wuh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxqef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpkvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oad1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkidu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjkae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kflls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_er45c")
+}],
+"loop": 2,
+"name": &"eat",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkxno"]
+size = Vector2(40, 20)
+
+[node name="Cow" type="Node2D" unique_id=203808175]
+script = ExtResource("1_bb7ib")
+
+[node name="AnimatedSprite2D-overworld" type="AnimatedSprite2D" parent="." unique_id=2019985161]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_lkxno")
+animation = &"eat"
+autoplay = "eat"
+
+[node name="AnimatedSprite2D-battle" type="AnimatedSprite2D" parent="." unique_id=197416081]
+visible = false
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_lkxno")
+animation = &"eat"
+autoplay = "eat"
+flip_h = true
+
+[node name="BattleStart" parent="." unique_id=2044380111 instance=ExtResource("3_bb7ib")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BattleStart" unique_id=692453616]
+position = Vector2(-3, -11)
+shape = SubResource("RectangleShape2D_lkxno")
