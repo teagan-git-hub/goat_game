@@ -518,6 +518,12 @@ offset_right = 40.0
 offset_bottom = 23.0
 label_settings = SubResource("LabelSettings_ts81q")
 
+[node name="EnemyDamageLabel" type="Label" parent="BattleLayer/Control" unique_id=205226783]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_ts81q")
+
 [node name="ProgressBar" type="ProgressBar" parent="BattleLayer/Control" unique_id=330322509]
 layout_mode = 0
 offset_left = 141.0

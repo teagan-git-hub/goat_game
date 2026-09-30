@@ -11,13 +11,12 @@ signal defeated
 @onready var animated_sprite: AnimatedSprite2D = $"AnimatedSprite2D-overworld"
 
 var health: float
-
+var health_bar: ProgressBar
 
 func _ready() -> void:
 	health = max_health
 	animated_sprite.visible = true
 	animated_sprite.flip_h = false
-
 
 func overworld_start() -> void:
 	animated_sprite.visible = true
@@ -30,8 +29,8 @@ func battle_start() -> void:
 	animated_sprite.play("eat")
 	animated_sprite.flip_h = true
 
-
 func take_damage(amount: float) -> void:
+	
 	if health <= 0.0:
 		return
 

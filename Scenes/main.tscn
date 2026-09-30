@@ -11,4 +11,5 @@
 [node name="BattleScreen" parent="." unique_id=1572553924 instance=ExtResource("2_8gbba")]
 
 [node name="GameModeManager" type="Node" parent="." unique_id=2028998422]
+unique_name_in_owner = true
 script = ExtResource("3_8gbba")

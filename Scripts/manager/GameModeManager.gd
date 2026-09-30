@@ -1,6 +1,8 @@
 class_name GameModeManager
 extends Node
 
+signal boss_match 
+
 enum GameMode {
 	Overworld,
 	Battle
@@ -53,10 +55,8 @@ func set_mode(mode: GameMode) -> void:
 		else Node.PROCESS_MODE_DISABLED
 	)
 
-
 func leave_battle() -> void:
 	set_mode(GameMode.Overworld)
-
 
 func enter_battle(enemy: Enemy) -> void:
 	if _mode == GameMode.Battle:
@@ -66,15 +66,23 @@ func enter_battle(enemy: Enemy) -> void:
 		return
 	
 	var enemy_health = enemy.max_health
+	var enemy_attack = enemy.attack_damage
+	var enemy_name = enemy.enemy_name
 	if enemy.name == "Boss":
-		enemy_health = 150
+		enemy_health = 200
+		enemy_attack = 15
+		enemy_name = "Boss"
+		boss_match.emit()
+	else:
+		enemy_health = 100
+		enemy_attack = 10
 	
 	active_encounter = [
 		{
 			"scene": COW_SCENE,
-			"enemy_name": enemy.enemy_name,
+			"enemy_name": enemy_name,
 			"max_health": enemy_health,
-			"attack_damage": enemy.attack_damage
+			"attack_damage": enemy_attack
 		},
 		{
 			"scene": COW_SCENE,
