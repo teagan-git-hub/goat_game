@@ -466,20 +466,20 @@ label_settings = ExtResource("2_4vnsc")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="items" type="Button" parent="BattleLayer/Control" unique_id=1956134953]
+[node name="heal" type="Button" parent="BattleLayer/Control" unique_id=1956134953]
 layout_mode = 0
 offset_left = 432.0
 offset_top = 483.0
 offset_right = 679.0
 offset_bottom = 582.0
 
-[node name="Label2" type="Label" parent="BattleLayer/Control/items" unique_id=483898615]
+[node name="Label2" type="Label" parent="BattleLayer/Control/heal" unique_id=483898615]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 2.0
 offset_right = 247.0
 offset_bottom = 99.0
-text = "Items"
+text = "Heal"
 label_settings = ExtResource("2_4vnsc")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -538,7 +538,7 @@ bus = &"SFX"
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="pressed" from="BattleLayer/Control/attack" to="." method="_on_attack_pressed"]
-[connection signal="pressed" from="BattleLayer/Control/items" to="." method="_on_items_pressed"]
+[connection signal="pressed" from="BattleLayer/Control/heal" to="." method="_on_heal_pressed"]
 [connection signal="pressed" from="BattleLayer/Control/retreat" to="." method="_on_retreat_pressed"]
 
 [editable path="BattleLayer/BattlePlayer"]

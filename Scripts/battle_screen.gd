@@ -12,7 +12,7 @@ extends Node2D
 @onready var enemy_turn_arrow: Sprite2D = $BattleLayer/Indicators/TurnArrows/EnemyTurnArrow
 
 @onready var attack_button: Button = $BattleLayer/Control/attack
-@onready var items_button: Button = $BattleLayer/Control/items
+@onready var heal_button: Button = $BattleLayer/Control/heal
 
 @onready var result_label: Label = $BattleLayer/Control/ResultLabel
 @onready var damage_label: Label = $BattleLayer/Control/DamageLabel
@@ -43,7 +43,7 @@ func start_battle(encounter: Array[Dictionary]) -> void:
 	damage_label.visible = false
 
 	attack_button.disabled = false
-	items_button.disabled = false
+	heal_button.disabled = false
 
 	var battle_enemies: Array[Enemy] = []
 
@@ -86,9 +86,9 @@ func _on_attack_pressed() -> void:
 	await get_tree().create_timer(0.05).timeout
 
 
-func _on_items_pressed() -> void:
+func _on_heal_pressed() -> void:
 	button_click.play()
-
+	battle_manager.player_heal()
 	await get_tree().create_timer(0.05).timeout
 
 
@@ -105,7 +105,7 @@ func _on_battle_won() -> void:
 	result_label.visible = true
 
 	attack_button.disabled = true
-	items_button.disabled = true
+	heal_button.disabled = true
 
 	healthbar.visible = false
 	GameModeManager.instance.leave_battle()
@@ -116,7 +116,7 @@ func _on_battle_lost() -> void:
 	result_label.visible = true
 
 	attack_button.disabled = true
-	items_button.disabled = true
+	heal_button.disabled = true
 	
 	healthbar.visible = false
 

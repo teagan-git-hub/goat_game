@@ -51,6 +51,23 @@ func player_attack() -> void:
 	_enemy_turn()
 	player_turn = player_health > 0.0
 	turn_changed.emit(player_turn)
+	
+func player_heal() -> void:
+	if not player_turn:
+		return
+
+	player_health = max(player_health + 25, 0.0)
+	print("Player health: ", player_health)
+	health_changed.emit(player_health)
+	player_healthbar.value = player_health
+	
+	player_turn = false
+	turn_changed.emit(player_turn)
+	await get_tree().create_timer(0.5).timeout
+
+	_enemy_turn()
+	player_turn = player_health > 0.0
+	turn_changed.emit(player_turn)
 
 
 func _enemy_turn() -> void:
