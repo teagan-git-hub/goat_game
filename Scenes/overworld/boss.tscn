@@ -80,6 +80,9 @@ size = Vector2(40, 20)
 
 [node name="Boss" type="Node2D" unique_id=203808175]
 script = ExtResource("1_l643f")
+enemy_name = null
+max_health = null
+attack_damage = null
 
 [node name="AnimatedSprite2D-overworld" type="AnimatedSprite2D" parent="." unique_id=2019985161]
 position = Vector2(0, -16)
