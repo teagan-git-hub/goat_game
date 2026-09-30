@@ -64,12 +64,16 @@ func enter_battle(enemy: Enemy) -> void:
 
 	if not is_instance_valid(enemy):
 		return
-
+	
+	var enemy_health = enemy.max_health
+	if enemy.name == "Boss":
+		enemy_health = 150
+	
 	active_encounter = [
 		{
 			"scene": COW_SCENE,
 			"enemy_name": enemy.enemy_name,
-			"max_health": enemy.max_health,
+			"max_health": enemy_health,
 			"attack_damage": enemy.attack_damage
 		},
 		{

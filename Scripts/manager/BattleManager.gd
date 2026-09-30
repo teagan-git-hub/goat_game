@@ -14,7 +14,6 @@ var player_health: float
 var enemies: Array[Enemy] = []
 var player_turn := true
 
-
 func setup(new_enemies: Array[Enemy]) -> void:
 	enemies = new_enemies
 	player_health = player_max_health
