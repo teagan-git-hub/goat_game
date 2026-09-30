@@ -11,6 +11,7 @@ signal battle_lost
 @onready var player_healthbar: ProgressBar = $"../BattleLayer/Control/ProgressBar"
 @onready var battle_player: CharacterBody2D = $"../BattleLayer/BattlePlayer"
 @onready var enemy_damage_label: Label = $"../BattleLayer/Control/EnemyDamageLabel"
+@onready var result_label: Label = $"../BattleLayer/Control/ResultLabel"
 
 var player_health: float
 var enemies: Array[Enemy] = []
@@ -61,10 +62,16 @@ func player_heal() -> void:
 	if not player_turn:
 		return
 
-	player_health = max(player_health + 25, 0.0)
+	player_health = min(player_health + 25, 100)
 	print("Player health: ", player_health)
 	health_changed.emit(player_health)
 	player_healthbar.value = player_health
+	enemy_damage_label.text = "+25"
+	enemy_damage_label.position = battle_player.position - Vector2(25, 150)
+	enemy_damage_label.visible = true
+
+	await get_tree().create_timer(0.5).timeout
+	enemy_damage_label.visible = false
 	
 	player_turn = false
 	turn_changed.emit(player_turn)
@@ -82,13 +89,16 @@ func player_flee() -> void:
 	if escape_chance > 80:
 		GameModeManager.instance.leave_battle()
 	else:
+		result_label.visible = true
+		result_label.text = "Flee Failed!"
 		times_fleed += 1
 		print(times_fleed)
 		
 		player_turn = false
 		turn_changed.emit(player_turn)
 		await get_tree().create_timer(0.5).timeout
-
+		result_label.visible = false
+		
 		_enemy_turn()
 		player_turn = player_health > 0.0
 		turn_changed.emit(player_turn)
@@ -98,7 +108,7 @@ func _enemy_turn() -> void:
 	if attacker == null:
 		return
 		
-	var enemy_damage: int = max(attacker.attack_damage + times_fleed, 15)
+	var enemy_damage: int = min(attacker.attack_damage + times_fleed, 15)
 	enemy_damage_label.text = "-%.0f" % enemy_damage
 	enemy_damage_label.position = battle_player.position - Vector2(25, 150)
 	enemy_damage_label.visible = true
