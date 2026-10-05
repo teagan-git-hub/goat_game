@@ -77,7 +77,7 @@ func enter_battle(enemy: Enemy) -> void:
 		enemy_attack = 15
 		enemy_name = "Boss"
 		enemy_scene = COW_BOSS_SCENE
-		enemy_scale = 6.0
+		enemy_scale = 5.0
 		
 		boss_match.emit()
 	else:
@@ -90,13 +90,6 @@ func enter_battle(enemy: Enemy) -> void:
 			"enemy_name": enemy_name,
 			"max_health": enemy_health,
 			"attack_damage": enemy_attack,
-			"enemy_scale": enemy_scale
-		},
-		{
-			"scene": enemy_scene,
-			"enemy_name": enemy.enemy_name,
-			"max_health": enemy.max_health,
-			"attack_damage": enemy.attack_damage,
 			"enemy_scale": enemy_scale
 		},
 		{

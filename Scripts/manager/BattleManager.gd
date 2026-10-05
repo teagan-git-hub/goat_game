@@ -6,7 +6,6 @@ signal turn_changed(player_turn: bool)
 signal battle_won
 signal battle_lost
 
-@export var player_attack_damage: float = 25.0
 @export var player_max_health: float = 100.0
 @onready var player_healthbar: ProgressBar = $"../BattleLayer/Control/ProgressBar"
 @onready var battle_player: CharacterBody2D = $"../BattleLayer/BattlePlayer"
@@ -40,6 +39,8 @@ func player_attack() -> void:
 	var target := _first_living_enemy()
 	if target == null:
 		return
+		
+	var player_attack_damage = rng.randi_range(25,50);
 
 	target.take_damage(player_attack_damage)
 	print(target.enemy_name, " health: ", target.health)
@@ -61,12 +62,14 @@ func player_attack() -> void:
 func player_heal() -> void:
 	if not player_turn:
 		return
+		
+	var heal_value = rng.randi_range(10,35);
 
-	player_health = min(player_health + 25, 100)
+	player_health = min(player_health + heal_value, 100)
 	print("Player health: ", player_health)
 	health_changed.emit(player_health)
 	player_healthbar.value = player_health
-	enemy_damage_label.text = "+25"
+	enemy_damage_label.text = "+%.0f" % heal_value
 	enemy_damage_label.position = battle_player.position - Vector2(25, 150)
 	enemy_damage_label.visible = true
 
