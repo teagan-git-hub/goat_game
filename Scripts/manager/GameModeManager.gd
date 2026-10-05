@@ -11,6 +11,7 @@ enum GameMode {
 static var instance: GameModeManager = null
 
 const COW_SCENE := preload("res://Scenes/overworld/cow.tscn")
+const COW_BOSS_SCENE := preload("res://Scenes/overworld/boss.tscn")
 
 var _mode: GameMode = GameMode.Overworld
 var active_encounter: Array[Dictionary] = []
@@ -68,10 +69,16 @@ func enter_battle(enemy: Enemy) -> void:
 	var enemy_health = enemy.max_health
 	var enemy_attack = enemy.attack_damage
 	var enemy_name = enemy.enemy_name
+	var enemy_scene = COW_SCENE
+	var enemy_scale = 4.0
+	
 	if enemy.name == "Boss":
 		enemy_health = 200
 		enemy_attack = 15
 		enemy_name = "Boss"
+		enemy_scene = COW_BOSS_SCENE
+		enemy_scale = 6.0
+		
 		boss_match.emit()
 	else:
 		enemy_health = 100
@@ -79,16 +86,25 @@ func enter_battle(enemy: Enemy) -> void:
 	
 	active_encounter = [
 		{
-			"scene": COW_SCENE,
+			"scene": enemy_scene,
 			"enemy_name": enemy_name,
 			"max_health": enemy_health,
-			"attack_damage": enemy_attack
+			"attack_damage": enemy_attack,
+			"enemy_scale": enemy_scale
 		},
 		{
-			"scene": COW_SCENE,
+			"scene": enemy_scene,
 			"enemy_name": enemy.enemy_name,
 			"max_health": enemy.max_health,
-			"attack_damage": enemy.attack_damage
+			"attack_damage": enemy.attack_damage,
+			"enemy_scale": enemy_scale
+		},
+		{
+			"scene": enemy_scene,
+			"enemy_name": enemy.enemy_name,
+			"max_health": enemy.max_health,
+			"attack_damage": enemy.attack_damage,
+			"enemy_scale": enemy_scale
 		}
 	]
 

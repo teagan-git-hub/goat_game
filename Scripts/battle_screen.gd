@@ -59,10 +59,11 @@ func start_battle(encounter: Array[Dictionary]) -> void:
 		enemy.max_health = data["max_health"]
 		enemy.attack_damage = data["attack_damage"]
 		
+		enemy.scale = Vector2(data["enemy_scale"], data["enemy_scale"])
+		
 		enemies_root.add_child(enemy)
 
 		enemy.position = ENEMY_SLOTS[index]
-		enemy.scale = Vector2(4, 4)
 	
 		enemy.battle_start()
 		enemy.on_damaged.connect(_show_damage.bind(enemy))
