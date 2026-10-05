@@ -40,7 +40,7 @@ func player_attack() -> void:
 	if target == null:
 		return
 		
-	var player_attack_damage = rng.randi_range(25,50);
+	var player_attack_damage = rng.randi_range(20,40);
 
 	target.take_damage(player_attack_damage)
 	print(target.enemy_name, " health: ", target.health)
@@ -63,7 +63,7 @@ func player_heal() -> void:
 	if not player_turn:
 		return
 		
-	var heal_value = rng.randi_range(10,35);
+	var heal_value = rng.randi_range(15,35);
 
 	player_health = min(player_health + heal_value, 100)
 	print("Player health: ", player_health)
@@ -90,6 +90,7 @@ func player_flee() -> void:
 
 	var escape_chance = rng.randi_range(0,100)
 	if escape_chance > 80:
+		times_fleed = 0
 		GameModeManager.instance.leave_battle()
 	else:
 		result_label.visible = true
@@ -111,7 +112,8 @@ func _enemy_turn() -> void:
 	if attacker == null:
 		return
 		
-	var enemy_damage: int = min(attacker.attack_damage + times_fleed, 15)
+	var min_damage: int = attacker.attack_damage + times_fleed
+	var enemy_damage: int = rng.randi_range(min_damage, min_damage + 10)
 	enemy_damage_label.text = "-%.0f" % enemy_damage
 	enemy_damage_label.position = battle_player.position - Vector2(25, 150)
 	enemy_damage_label.visible = true
