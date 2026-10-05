@@ -129,6 +129,8 @@ func _enemy_turn() -> void:
 	if player_health == 0.0:
 		print("Defeat")
 		battle_lost.emit()
+		await get_tree().create_timer(1).timeout
+		get_tree().reload_current_scene()
 
 func _first_living_enemy() -> Enemy:
 	for enemy in enemies:
