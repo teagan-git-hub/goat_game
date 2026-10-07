@@ -35,7 +35,7 @@ func setup(new_enemies: Array[Enemy]) -> void:
 	player_healthbar.visible = true
 	turn_changed.emit(player_turn)
 	start_up_music.play()
-	await get_tree().create_timer(2)
+	await get_tree().create_timer(5).timeout
 	start_up_music.stop()
 
 func player_attack() -> void:
@@ -138,7 +138,7 @@ func _enemy_turn() -> void:
 		print("Defeat")
 		death.play()
 		battle_lost.emit()
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(2).timeout
 		get_tree().reload_current_scene()
 
 func _first_living_enemy() -> Enemy:

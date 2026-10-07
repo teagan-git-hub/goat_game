@@ -551,16 +551,20 @@ bus = &"SFX"
 [node name="CowTakeDamage" type="AudioStreamPlayer" parent="Sounds" unique_id=1668096685]
 stream = ExtResource("11_5p6ij")
 volume_db = -4.561
+bus = &"SFX"
 
 [node name="StartUpMusic" type="AudioStreamPlayer" parent="Sounds" unique_id=423920063]
 stream = ExtResource("12_mt0j3")
+bus = &"Music"
 
 [node name="Death" type="AudioStreamPlayer" parent="Sounds" unique_id=260788880]
 stream = ExtResource("11_tpr5f")
+bus = &"SFX"
 
 [node name="GoatTakeDamage" type="AudioStreamPlayer" parent="Sounds" unique_id=1414991297]
 stream = ExtResource("11_lregp")
 volume_db = -3.193
+bus = &"SFX"
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="pressed" from="BattleLayer/Control/attack" to="." method="_on_attack_pressed"]
