@@ -11,6 +11,10 @@ signal battle_lost
 @onready var battle_player: CharacterBody2D = $"../BattleLayer/BattlePlayer"
 @onready var enemy_damage_label: Label = $"../BattleLayer/Control/EnemyDamageLabel"
 @onready var result_label: Label = $"../BattleLayer/Control/ResultLabel"
+@onready var goat_take_damage: AudioStreamPlayer = $"../Sounds/GoatTakeDamage"
+@onready var death: AudioStreamPlayer = $"../Sounds/Death"
+@onready var start_up_music: AudioStreamPlayer = $"../Sounds/StartUpMusic"
+@onready var cow_take_damage: AudioStreamPlayer = $"../Sounds/CowTakeDamage"
 
 var player_health: float
 var enemies: Array[Enemy] = []
@@ -30,7 +34,9 @@ func setup(new_enemies: Array[Enemy]) -> void:
 	player_healthbar.value = 100
 	player_healthbar.visible = true
 	turn_changed.emit(player_turn)
-
+	start_up_music.play()
+	await get_tree().create_timer(2)
+	start_up_music.stop()
 
 func player_attack() -> void:
 	if not player_turn:
@@ -42,6 +48,7 @@ func player_attack() -> void:
 		
 	var player_attack_damage = rng.randi_range(20,40);
 
+	cow_take_damage.play()
 	target.take_damage(player_attack_damage)
 	print(target.enemy_name, " health: ", target.health)
 
@@ -116,6 +123,7 @@ func _enemy_turn() -> void:
 	var enemy_damage: int = rng.randi_range(min_damage, min_damage + 10)
 	enemy_damage_label.text = "-%.0f" % enemy_damage
 	enemy_damage_label.position = battle_player.position - Vector2(25, 150)
+	goat_take_damage.play()
 	enemy_damage_label.visible = true
 
 	await get_tree().create_timer(0.5).timeout
@@ -128,6 +136,7 @@ func _enemy_turn() -> void:
 
 	if player_health == 0.0:
 		print("Defeat")
+		death.play()
 		battle_lost.emit()
 		await get_tree().create_timer(1).timeout
 		get_tree().reload_current_scene()

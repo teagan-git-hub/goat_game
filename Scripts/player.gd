@@ -1,5 +1,6 @@
 extends CharacterBody2D
 @onready var goat_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var grass_walk: AudioStreamPlayer = $GrassWalk
 
 func _physics_process(delta: float) -> void:
 	var direction=Input.get_vector("left", "right", "up", "down")

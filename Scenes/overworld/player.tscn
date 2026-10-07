@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://fh4eq5x46y25" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://c1qgeedykflyr" path="res://assets/animals_pixel_art_pack_free/sprites/Gompei.png" id="2_fsqum"]
+[ext_resource type="AudioStream" uid="uid://bgvqbefls5it" path="res://assets/music/28 High Quality 16-bit RPG Music/SFX/Grass Walk.mp3" id="3_rxytb"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rxytb"]
 load_path = "res://.godot/imported/Gompei.png-a444cb5e9545bee531ca35a9bbb1ff22.ctex"
@@ -134,3 +135,6 @@ shape = SubResource("CircleShape2D_qtiiy")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=735661709]
 zoom = Vector2(3, 3)
+
+[node name="GrassWalk" type="AudioStreamPlayer" parent="." unique_id=1110546488]
+stream = ExtResource("3_rxytb")
