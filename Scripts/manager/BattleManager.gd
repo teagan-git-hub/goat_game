@@ -15,6 +15,7 @@ signal battle_lost
 @onready var death: AudioStreamPlayer = $"../Sounds/Death"
 @onready var start_up_music: AudioStreamPlayer = $"../Sounds/StartUpMusic"
 @onready var cow_take_damage: AudioStreamPlayer = $"../Sounds/CowTakeDamage"
+@onready var moo: AudioStreamPlayer = $"../Sounds/Moo"
 
 var player_health: float
 var enemies: Array[Enemy] = []
@@ -37,6 +38,10 @@ func setup(new_enemies: Array[Enemy]) -> void:
 	start_up_music.play()
 	await get_tree().create_timer(5).timeout
 	start_up_music.stop()
+	await get_tree().create_timer(1).timeout
+	moo.play()
+	await get_tree().create_timer(2).timeout
+	moo.stop()
 
 func player_attack() -> void:
 	if not player_turn:

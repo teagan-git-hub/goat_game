@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://dh3eglwnpu8gj" path="res://assets/music/28 High Quality 16-bit RPG Music/SFX/Goat Take Damage.mp3" id="11_lregp"]
 [ext_resource type="AudioStream" uid="uid://dbk0pc8pvb1mw" path="res://assets/music/28 High Quality 16-bit RPG Music/Music/Death.mp3" id="11_tpr5f"]
 [ext_resource type="AudioStream" uid="uid://bqd3rersv4sjd" path="res://assets/music/28 High Quality 16-bit RPG Music/Music/Start Up Music.mp3" id="12_mt0j3"]
+[ext_resource type="AudioStream" uid="uid://bgpxl7q7awsq1" path="res://assets/music/28 High Quality 16-bit RPG Music/SFX/Cow Moo 2.mp3" id="15_mt0j3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lregp"]
 texture = ExtResource("10_yqniy")
@@ -564,6 +565,10 @@ bus = &"SFX"
 [node name="GoatTakeDamage" type="AudioStreamPlayer" parent="Sounds" unique_id=1414991297]
 stream = ExtResource("11_lregp")
 volume_db = -3.193
+bus = &"SFX"
+
+[node name="Moo" type="AudioStreamPlayer" parent="Sounds" unique_id=853489275]
+stream = ExtResource("15_mt0j3")
 bus = &"SFX"
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
